@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blad — Pitch Deck | Impact Labs 2026 (University of Potsdam)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest-deep: #0F261B;
+      --forest-mid: #1B4332;
+      --green-bright: #40916C;
+      --green-mint: #D8F3DC;
+      --sage-bg: #EBF4EE;
+      --cream-bg: #F6FAF7;
+      --terracotta: #D96B43;
+      --terracotta-soft: #FDECE6;
+      --text-dark: #102419;
+      --text-muted: #3A5446;
+      --border: #C5DEC9;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #1A2620;
+      color: var(--text-dark);
+      line-height: 1.45;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Top Action Bar (Hidden when printing to PDF) */
+    .deck-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 38, 27, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(116, 198, 157, 0.28);
+      padding: 0.85rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--white);
+    }
+
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .toolbar-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .toolbar-badge {
+      background: rgba(64, 145, 108, 0.35);
+      border: 1px solid #74C69D;
+      color: #D8F3DC;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-toolbar {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.15rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-print {
+      background: #52B788;
+      color: #091B12;
+    }
+
+    .btn-print:hover {
+      background: #74C69D;
+    }
+
+    .btn-back {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .btn-back:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    /* Slide Container */
+    .deck-wrapper {
+      max-width: 1280px;
+      margin: 2rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.25rem;
+      padding: 0 1rem 3rem;
+    }
+
+    /* 16:9 Slide Format */
+    .slide {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: var(--cream-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3.2rem 3.8rem 2.4rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .slide-dark {
+      background: var(--forest-deep);
+      color: var(--white);
+    }
+
+    .slide-sage {
+      background: var(--sage-bg);
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.4rem;
+    }
+
+    .slide-eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--green-bright);
+      background: var(--green-mint);
+      padding: 0.28rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 0.55rem;
+    }
+
+    .slide-dark .slide-eyebrow {
+      background: rgba(64, 145, 108, 0.28);
+      color: #95D5B2;
+      border: 1px solid rgba(149, 213, 178, 0.35);
+    }
+
+    .slide-title {
+      font-family: 'Fraunces', serif;
+      font-size: 2.15rem;
+      line-height: 1.15;
+      color: var(--text-dark);
+      max-width: 880px;
+    }
+
+    .slide-dark .slide-title {
+      color: var(--white);
+    }
+
+    .slide-num {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-bright);
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .slide-dark .slide-num {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #95D5B2;
+    }
+
+    /* Slide Body */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+      align-items: stretch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.35rem;
+      align-items: stretch;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.1rem;
+      align-items: stretch;
+    }
+
+    /* Cards inside slides */
+    .card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.35rem 1.45rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .slide-dark .card {
+      background: rgba(24, 58, 41, 0.85);
+      border-color: rgba(116, 198, 157, 0.28);
+      color: var(--white);
+    }
+
+    .card-accent {
+      border-left: 5px solid var(--green-bright);
+    }
+
+    .card-warm {
+      border-left: 5px solid var(--terracotta);
+    }
+
+    .card-tag {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: var(--green-mint);
+      color: var(--forest-mid);
+    }
+
+    .card-tag-warm {
+      background: var(--terracotta-soft);
+      color: #9E4220;
+    }
+
+    .card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem;
+      line-height: 1.25;
+      color: var(--text-dark);
+    }
+
+    .slide-dark .card h3 {
+      color: var(--white);
+    }
+
+    .card p, .card li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .slide-dark .card p, .slide-dark .card li {
+      color: #D8F3DC;
+    }
+
+    .card ul {
+      padding-left: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .card-photo {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 9px;
+      margin-bottom: 0.35rem;
+    }
+
+    /* Slide 1: Cover Specifics */
+    .slide-cover {
+      position: relative;
+      background: var(--forest-deep);
+      color: var(--white);
+      padding: 3.6rem 4.2rem 2.6rem;
+    }
+
+    .cover-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.38;
+      z-index: 0;
+    }
+
+    .cover-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(9, 25, 17, 0.94) 0%, rgba(15, 38, 27, 0.82) 55%, rgba(15, 38, 27, 0.55) 100%);
+      z-index: 1;
+    }
+
+    .cover-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 2.5rem;
+      align-items: center;
+      flex: 1;
+    }
+
+    .cover-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .cover-brand-name {
+      font-family: 'Fraunces', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .cover-headline {
+      font-family: 'Fraunces', serif;
+      font-size: 2.85rem;
+      line-height: 1.12;
+      margin-bottom: 1.1rem;
+      color: #FFFFFF;
+    }
+
+    .cover-sub {
+      font-size: 1.08rem;
+      color: #E2F5EA;
+      margin-bottom: 1.5rem;
+      max-width: 620px;
+    }
+
+    .cover-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+    }
+
+    .cover-meta-box {
+      background: rgba(18, 45, 31, 0.78);
+      border: 1px solid rgba(116, 198, 157, 0.35);
+      border-radius: 12px;
+      padding: 0.85rem 1.1rem;
+    }
+
+    .cover-meta-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #95D5B2;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .cover-meta-val {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .cover-visual-card {
+      background: rgba(15, 38, 27, 0.82);
+      border: 1.5px solid rgba(116, 198, 157, 0.4);
+      border-radius: 16px;
+      padding: 1.1rem;
+      text-align: center;
+    }
+
+    .cover-visual-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 0.85rem;
+    }
+
+    /* Slide Footer */
+    .slide-footer {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(27, 67, 50, 0.15);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .slide-dark .slide-footer, .slide-cover .slide-footer {
+      border-top-color: rgba(255, 255, 255, 0.16);
+      color: #A3C9B3;
+    }
+
+    .sdg-pill {
+      display: inline-block;
+      background: var(--forest-mid);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 0.22rem 0.65rem;
+      border-radius: 6px;
+      margin-bottom: 0.35rem;
+      align-self: flex-start;
+    }
+
+    /* Print / Save-as-PDF Rules */
+    @page {
+      size: 13.333in 7.5in;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        background: none;
+      }
+      .deck-toolbar {
+        display: none !important;
+      }
+      .deck-wrapper {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+      }
+      .slide {
+        width: 13.333in;
+        height: 7.5in;
+        border-radius: 0;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Toolbar (Hidden in PDF Print) -->
+  <header class="deck-toolbar">
+    <div class="toolbar-left">
+      <span class="toolbar-title">Blad · Pitch Deck (9 Slides)</span>
+      <span class="toolbar-badge">Potsdam Transfer · Impact Labs 2026 Application</span>
+    </div>
+    <div class="toolbar-actions">
+      <a href="index.html" class="btn-toolbar btn-back">← Back to Website</a>
+      <button onclick="window.print()" class="btn-toolbar btn-print">
+        Save / Print as PDF (max 10MB)
+      </button>
+    </div>
+  </header>
+
+  <main class="deck-wrapper">
+
+    <!-- SLIDE 1: COVER -->
+    <section class="slide slide-cover">
+      <img src="assets/brandenburg-leaves-bg.jpg" alt="" class="cover-bg">
+      <div class="cover-scrim"></div>
+
+      <div class="cover-content">
+        <div>
+          <div class="cover-brand">
+            <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
+              <path d="M32 4 C35 11 45 14 51 22 C57 30 56 42 48 49 C41 55 34 52 32 47 C30 52 23 55 16 49 C8 42 7 30 13 22 C19 14 29 11 32 4 Z" fill="#52B788"/>
+              <path d="M32 59 L32 10" stroke="#D8F3DC" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <span class="cover-brand-name">Blad</span>
+            <span class="toolbar-badge">Impact Labs 2026 · Pitch Deck</span>
+          </div>
+
+          <h1 class="cover-headline">
+            Hands-on nature education &amp; local climate action for Berlin &amp; Brandenburg communities
+          </h1>
+          <p class="cover-sub">
+            Moving neighbourhoods from climate worry to collective action: Kitas, schools, families, seniors, and company teams caring for street trees, greening inner courtyards (<em>Hinterhöfe</em>), and cooling urban blocks.
+          </p>
+
+          <div class="cover-meta-grid">
+            <div class="cover-meta-box">
+              <span class="cover-meta-label">Co-Founding Team</span>
+              <span class="cover-meta-val">Faizan Ahmed &amp; Maham Shakil (Berlin)</span>
+            </div>
+            <div class="cover-meta-box">
+              <span class="cover-meta-label">Impact Labs Tracks</span>
+              <span class="cover-meta-val">Climate &amp; Environmental Innovation + Social Impact</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cover-visual-card">
+          <img src="assets/hero-sunlit-leaf.jpg" alt="Sunlit Berlin Linden Leaf">
+          <div style="font-family: 'Fraunces', serif; font-size: 1.1rem; color: #FFFFFF; margin-bottom: 0.25rem;">
+            Vision: Greening Germany, Kiez by Kiez
+          </div>
+          <p style="font-size: 0.85rem; color: #D8F3DC;">
+            Pre-Seed Social &amp; Ecological Venture · Pilot 2026/27 in Berlin &amp; Brandenburg
+          </p>
+        </div>
+      </div>
+
+      <footer class="slide-footer">
+        <span>Blad · Application for Impact Labs 2026 (Potsdam Transfer · University of Potsdam)</span>
+        <span>Slide 01 / 09</span>
+      </footer>
+    </section>
+
+    <!-- SLIDE 2: PROBLEM IDENTIFICATION -->
+    <section class="slide">
+      <header class="slide-header">
+        <div>
+          <span class="slide-eyebrow">01 · Problem Identification</span>
+          <h2 class="slide-title">Overheating street trees &amp; courtyards—and a gap in accessible local action</h2>
+        </div>
+        <span class="slide-num">02 / 09</span>
+      </header>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card card-warm">
+            <img src="assets/problem-heat-tree.jpg" alt="Heat-stressed Berlin street tree" class="card-photo" style="height: 155px;">
+            <span class="card-tag card-tag-warm">Ecological Challenge · Berlin &amp; Brandenburg</span>
+            <h3>1. Drought-stressed street trees &amp; sealed inner courtyards (<em>Hinterhöfe</em>)</h3>
+            <ul>
+              <li>Ongoing summer droughts, sandy soils, and sealed asphalt put severe stress on urban street trees and residential courtyards.</li>
+              <li>Urban heat islands directly impact vulnerable groups—especially young Kita children and older neighbours—while reducing urban biodiversity.</li>
+            </ul>
+          </div>
+
+          <div class="card card-accent">
+            <span class="card-tag">Social &amp; Educational Challenge</span>
+            <h3>2. Climate worry without low-barrier, intergenerational action</h3>
+            <ul>
+              <li><strong>Under-resourced Kitas, public schools &amp; senior groups</strong> lack budget and guided formats for practical outdoor climate and biodiversity education right at their doorstep.</li>
+              <li><strong>Neighbours &amp; families</strong> want to help (as seen in civic initiatives like <em>Gieß den Kiez</em>), but often lack structured, community-led activities that connect tree watering, courtyard greening, and learning across generations.</li>
+              <li><strong>Regional companies (SMEs &amp; CSR teams)</strong> look for tangible, local sustainability days beyond abstract carbon offsets.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <footer class="slide-footer">
+        <span>Blad · Problem Identification &amp; Stakeholder Pain Points</span>
+        <span>Faizan Ahmed &amp; Maham Shakil</span>
+      </footer>
+    </section>
+
+    <!-- SLIDE 3: SOLUTION & VALUE PROPOSITION -->
+    <section class="slide slide-sage">
+      <header class="slide-header">
+        <div>
+          <span class="slide-eyebrow">02 · Solution &amp; Problem-Solution Fit</span>
+          <h2 class="slide-title">Three hands-on pillars connecting urban cooling with community education</h2>
+        </div>
+        <span class="slide-num">03 / 09</span>
+      </header>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card">
+            <img src="assets/card1-tree-watering.jpg" alt="Street tree watering" class="card-photo">
+            <span class="card-tag">1 · Kitas, Schools &amp; Seniors</span>
+            <h3>Intergenerational Nature &amp; Tree-Care Workshops</h3>
+            <p>
+              Guided outdoor sessions where Kita children, school classes, families, and seniors adopt and water local street trees, identify birds and insects, and share nature knowledge across generations.
+            </p>
+          </div>
+
+          <div class="card">
+            <img src="assets/card2-magnifying-insect.jpg" alt="Citizen science" class="card-photo">
+            <span class="card-tag">2 · Youth, Adults &amp; Kiez</span>
+            <h3>Kiez &amp; Courtyard (<em>Hinterhof</em>) Citizen Science</h3>
+            <p>
+              Hands-on field sessions measuring surface and air temperatures between shaded tree beds, greened inner courtyards, and sealed asphalt—making urban heat island cooling visible and measurable.
+            </p>
+          </div>
+
+          <div class="card">
+            <img src="assets/card3-planting-treebed.jpg" alt="Planting tree beds" class="card-photo">
+            <span class="card-tag">3 · B2B Revenue Engine</span>
+            <h3>Corporate Kiez Impact Days</h3>
+            <p>
+              Paid team-building &amp; ESG action days where Berlin and Brandenburg companies plant pollinator-friendly tree beds (<em>Baumscheiben</em>), unseal/green shared courtyards, and cross-finance free community workshops.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="slide-footer">
+        <span>Blad · Value Proposition: Practical Ecology + Intergenerational Inclusion</span>
+        <span>Faizan Ahmed &amp; Maham Shakil</span>
+      </footer>
+    </section>
+
+    <!-- SLIDE 4: TARGET MARKET & ECOSYSTEM -->
+    <section class="slide">
+      <header class="slide-header">
+        <div>
+          <span class="slide-eyebrow">03 · Target Group, Market Structure &amp; Ecosystem</span>
+          <h2 class="slide-title">Dual-sided market in Berlin &amp; Brandenburg with strong local synergies</h2>
+        </div>
+        <span class="slide-num">04 / 09</span>
+      </header>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card card-accent">
+            <span class="card-tag">Community &amp; Education Users</span>
+            <h3>Kitas, Schools, Seniors &amp; Hausgemeinschaften</h3>
+            <ul>
+              <li><strong>~2,900+ Kitas &amp; 800+ schools</strong> in Berlin plus Potsdam/Brandenburg educational institutions seeking BNE (Education for Sustainable Development) formats.</li>
+              <li><strong>Neighbourhood &amp; senior centres</strong> looking for accessible, socially inclusive outdoor group activities.</li>
+              <li><strong>Residential blocks (<em>Hinterhöfe</em>)</strong> seeking guidance to green shared courtyards.</li>
+            </ul>
+          </div>
+
+          <div class="card card-accent">
+            <span class="card-tag">Paying Customers (B2B &amp; Public)</span>
+            <h3>Companies (CSR / HR) &amp; Local Programmes</h3>
+            <ul>
+              <li><strong>Primary B2B Market:</strong> SMEs, tech companies, and corporate teams in Berlin &amp; Brandenburg booking half-day or full-day <em>Kiez Impact Days</em> for team cohesion and local ESG engagement.</li>
+              <li><strong>Secondary Public Co-Financing:</strong> Municipal climate adaptation, Quartiersmanagement, and environmental education programmes.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="card-tag">Ecosystem &amp; Differentiation</span>
+            <h3>Complementary to Civic &amp; EdTech Players</h3>
+            <ul>
+              <li><strong>Civic Tech (e.g., <em>Gieß den Kiez</em>):</strong> Maps trees digitally; <strong>Blad</strong> activates the human, educational, and group routine on the ground.</li>
+              <li><strong>School Gardens (e.g., <em>Acker e.V.</em>):</strong> Focuses on vegetable farming on dedicated plots; <strong>Blad</strong> works directly with <strong>existing street trees &amp; inner courtyards</strong> right outside any doorstep—needing zero extra land.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <footer class="slide-footer">
+        <span>Blad · Market Definition &amp; Collaborative Positioning</span>
+        <span>Faizan Ahmed &amp; Maham Shakil</span>
+      </footer>
+    </section>
+
+    <!-- SLIDE 5: IMPACT LOGIC & UN SDGs -->
+    <section class="slide slide-dark">
+      <header class="slide-header">
+        <div>
+          <span class="slide-eyebrow">04 · Impact Logic &amp; UN Sustainable Development Goals (SDGs)</span>
+          <h2 class="slide-title">Addressing 4 UN SDGs across Environmental, Social &amp; Economic dimensions</h2>
+        </div>
+        <span class="slide-num">05 / 09</span>
+      </header>
+
+      <div class="slide-body">
+        <div class="grid-4">
+          <div class="card">
+            <span class="sdg-pill" style="background:#D96B43;">SDG 11 · Sustainable Cities</span>
+            <h3>Cooler, Resilient Neighbourhoods</h3>
+            <p>
+              <strong>Environmental &amp; Social:</strong> Greening inner courtyards (<em>Hinterhöfe</em>) and caring for street trees reduces local heat-island stress and improves shared public/residential space quality.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="sdg-pill" style="background:#2D6A4F;">SDG 13 · Climate Action</span>
+            <h3>From Climate Worry to Local Action</h3>
+            <p>
+              <strong>Environmental &amp; Educational:</strong> Hands-on microclimate measurement and summer tree watering build practical climate adaptation literacy across all age groups.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="sdg-pill" style="background:#B5442A;">SDG 4 &amp; 10 · Inclusive Education</span>
+            <h3>Equal Access Across Generations</h3>
+            <p>
+              <strong>Social Dimension:</strong> Cross-financing ensures under-resourced Kitas, public schools, and senior groups participate 100% free of charge, reducing educational and social isolation.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="sdg-pill" style="background:#40916C;">SDG 15 · Life on Land</span>
+            <h3>Urban Biodiversity &amp; Pollinators</h3>
+            <p>
+              <strong>Ecological &amp; Economic:</strong> Corporate teams and neighbours plant native perennials in tree beds (<em>Baumscheiben</em>) and install insect habitats, creating measurable urban biodiversity stepping stones.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="slide-footer">
+        <span>Blad · Embedded Sustainability Across Environment, Society &amp; Economy</span>
+        <span>Faizan Ahmed &amp; Maham Shakil</span>
+      </footer>
+    </section>
+
+    <!-- SLIDE 6: HYBRID SOCIAL BUSINESS MODEL -->
+    <section class="slide">
+      <header class="slide-header">
+        <div>
+          <span class="slide-eyebrow">05 · Business &amp; Financing Model</span>
+          <h2 class="slide-title">Self-sustaining hybrid model: Corporate Impact Days fund free Kiez education</h2>
+        </div>
+        <span class="slide-num">06 / 09</span>
+      </header>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card card-accent">
+            <span class="card-tag">Revenue Stream 1 · Earned B2B</span>
+            <h3>Paid Corporate Kiez Impact Days</h3>
+            <ul>
+              <li>Half-day or full-day guided team events for companies in Berlin &amp; Brandenburg (15–40 employees per session).</li>
+              <li>Includes materials (native plants, soil, watering gear, insect hotel kits), expert facilitation, and a local neighbourhood impact summary.</li>
+              <li><strong>Role in model:</strong> Primary earned-revenue engine that directly cross-subsidizes free community workshops.</li>
+            </ul>
+          </div>
+
+          <div class="card card-accent">
+            <span class="card-tag">Revenue Stream 2 · Public &amp; Grants</span>
+            <h3>Climate, Education &amp; Kiez Grants</h3>
+            <ul>
+              <li>Targeted public funding from neighbourhood funds (<em>Quartiersmanagement</em>), urban climate adaptation programmes, and environmental education foundations.</li>
+              <li>Co-funding partnerships with housing associations (<em>Wohnungsbaugesellschaften</em>) for <em>Hinterhof</em> greening &amp; tenant workshops.</li>
+            </ul>
+          </div>
+
+          <div class="card card-warm">
+            <span class="card-tag card-tag-warm">Social Impact Delivery</span>
+            <h3>100% Free for Under-Resourced Groups</h3>
+            <ul>
+              <li>Every paid Corporate Kiez Impact Day co-finances free workshops for Kitas, public schools, and senior groups in the same neighbourhood.</li>
+              <li><strong>Planned Legal Structure (to be finalized in Impact Labs):</strong> gUG (haftungsbeschränkt) / gGmbH or hybrid social enterprise.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <footer class="slide-footer">
+        <span>Blad · Financially Viable Social Enterprise Architecture</span>
+        <span>Faizan Ahmed &amp; Maham Shakil</span>
+      </footer>
+    </section>
+
+    <!-- SLIDE 7: TRACTION, PROTOTYPE & STATUS -->
+    <section class="slide slide-sage">
+      <header class="slide-header">
+        <div>
+          <span class="slide-eyebrow">06 · Current Status, Prototype &amp; Early Validation</span>
+          <h2 class="slide-title">Pre-seed foundation ready for structured B2B &amp; community testing</h2>
+        </div>
+        <span class="slide-num">07 / 09</span>
+      </header>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card">
+            <span class="card-tag">Completed Pre-Seed Building Blocks</span>
+            <h3>1. Workshop Concept &amp; Bilingual Web Prototype</h3>
+            <ul>
+              <li><strong>Modular 3-Pillar Format Designed:</strong> Age-adapted outdoor modules for (a) Bird &amp; insect identification, (b) Street tree care &amp; <em>Baumscheiben</em> planting, and (c) Courtyard/street microclimate temperature mapping.</li>
+              <li><strong>Bilingual Web Prototype Live (EN/DE):</strong> Accessible, zero-cookie platform built to onboard community members, Kitas/schools, and corporate Kiez Impact Day partners.</li>
+              <li><strong>Pre-Incorporation Stage:</strong> Not yet legally incorporated—100% aligned with Impact Labs' pre-seed requirement.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="card-tag">Problem-Solution Validation</span>
+            <h3>2. Grounded in Proven Berlin &amp; Brandenburg Demand</h3>
+            <ul>
+              <li><strong>Validated Civic Demand:</strong> Builds directly on Berlin's strong citizen tree-watering movement (<em>Gieß den Kiez</em>) and municipal heat-action priorities by adding guided, social group formats.</li>
+              <li><strong>Next Validation Focus:</strong> Structured interviews with Kita/school educators, senior neighbourhood centres, housing courtyard initiatives, and CSR/HR leads across Berlin and Potsdam.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <footer class="slide-footer">
+        <span>Blad · Pre-Seed Status &amp; Prototype Readiness</span>
+        <span>Faizan Ahmed &amp; Maham Shakil</span>
+      </footer>
+    </section>
+
+    <!-- SLIDE 8: MILESTONE PLAN & IMPACT LABS GOALS -->
+    <section class="slide">
+      <header class="slide-header">
+        <div>
+          <span class="slide-eyebrow">07 · Milestone Roadmap &amp; Goals for Impact Labs (Nov 2026 – Feb 2027)</span>
+          <h2 class="slide-title">How we will use the 3-month Impact Labs programme</h2>
+        </div>
+        <span class="slide-num">08 / 09</span>
+      </header>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card card-accent">
+            <span class="card-tag">Nov – Dec 2026 · Impact Labs Part 1</span>
+            <h3>1. Impact Logic &amp; Stakeholder Validation</h3>
+            <ul>
+              <li>Refine our <strong>Impact Business Model Canvas</strong> and Theory of Change with Potsdam Transfer coaches.</li>
+              <li>Conduct 15+ structured discovery interviews with Kitas, schools, senior groups, and CSR teams in Berlin &amp; Potsdam.</li>
+              <li>Define measurable KPIs (surface temperature delta, trees/courtyards cared for, participant diversity).</li>
+            </ul>
+          </div>
+
+          <div class="card card-accent">
+            <span class="card-tag">Jan – Feb 2027 · Impact Labs Part 2</span>
+            <h3>2. B2B Testing, Pricing &amp; Legal Setup</h3>
+            <ul>
+              <li>Use Impact Labs' <strong>B2B Testing &amp; Demo sessions</strong> to validate and price our Corporate <em>Kiez Impact Day</em> packages with partner companies.</li>
+              <li>Finalize financial plan, legal structure (gUG/gGmbH), and grant applications.</li>
+              <li>Pitch at <strong>Match for Impact</strong> to secure pilot partners for Spring 2027.</li>
+            </ul>
+          </div>
+
+          <div class="card card-warm">
+            <span class="card-tag card-tag-warm">Spring – Autumn 2027 · Pilot Launch</span>
+            <h3>3. First Kiez Pilots in Berlin &amp; Brandenburg</h3>
+            <ul>
+              <li>Deliver first paid corporate <em>Kiez Impact Days</em> and cross-financed free Kita/school/senior workshops during the 2027 growing &amp; watering season.</li>
+              <li>Publish first neighbourhood microclimate &amp; social impact evaluation report.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <footer class="slide-footer">
+        <span>Blad · Milestones for Impact Labs (Nov 2026 – Feb 2027) &amp; 2027 Pilot Season</span>
+        <span>Faizan Ahmed &amp; Maham Shakil</span>
+      </footer>
+    </section>
+
+    <!-- SLIDE 9: FOUNDING TEAM -->
+    <section class="slide slide-dark">
+      <header class="slide-header">
+        <div>
+          <span class="slide-eyebrow">08 · Founding Team &amp; Commitment</span>
+          <h2 class="slide-title">Berliners united by a mission to help green Germany—starting in our Kieze</h2>
+        </div>
+        <span class="slide-num">09 / 09</span>
+      </header>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card">
+            <span class="card-tag">Co-Founder · Strategy, Partnerships &amp; Operations</span>
+            <h3>Faizan Ahmed</h3>
+            <p>
+              Based in Berlin. Initiated Blad with a clear mission to help green Germany from the neighbourhood level up. Leads venture development, B2B corporate <em>Kiez Impact Day</em> partnerships, local stakeholder outreach, and digital/operational execution.
+            </p>
+            <p style="margin-top:0.4rem; font-size:0.85rem; color:#95D5B2;">
+              ✓ Full commitment to all 12 workshop days in Potsdam, Zoom coaching, and Selection Day (Oct 15, 2026).
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="card-tag">Co-Founder · Community, Curriculum &amp; Social Impact</span>
+            <h3>Maham Shakil</h3>
+            <p>
+              Based in Berlin. Co-founded Blad to connect urban environmental action with inclusive, intergenerational learning. Leads community engagement across Kitas, schools, families, and senior groups, workshop format design, and social impact evaluation.
+            </p>
+            <p style="margin-top:0.4rem; font-size:0.85rem; color:#95D5B2;">
+              ✓ Full commitment to all 12 workshop days in Potsdam, Zoom coaching, and Selection Day (Oct 15, 2026).
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 1.25rem; flex-direction: row; align-items: center; justify-content: space-between; padding: 1.1rem 1.5rem;">
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.2rem;">Why Impact Labs at the University of Potsdam?</h3>
+            <p style="font-size: 0.88rem;">
+              We combine strong founder commitment and a concrete local concept with the desire to build a rigorous social business model alongside Potsdam Transfer's mentors and regional partners (such as Acker Impact).
+            </p>
+          </div>
+          <span class="toolbar-badge" style="white-space: nowrap; font-size: 0.85rem; padding: 0.45rem 0.95rem;">
+            Berlin &amp; Brandenburg · 2026/27
+          </span>
+        </div>
+      </div>
+
+      <footer class="slide-footer">
+        <span>Blad · Co-Founders: Faizan Ahmed &amp; Maham Shakil · Berlin</span>
+        <span>Thank You! · Slide 09 / 09</span>
+      </footer>
+    </section>
+
+  </main>
+</body>
+</html>
