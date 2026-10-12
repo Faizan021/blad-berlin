@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://faizan021.github.io/blad-berlin/sitemap.xml

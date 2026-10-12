@@ -336,96 +336,114 @@ const translations = {
     footer_privacy: "Datenschutz (noch zu ergänzen)",
 
     nav_proto: "Prototyp",
-    proto_label: "Interaktiver Pilot-Prototyp · GreenTech & Citizen Science",
-    proto_title: "Teste unser Kiez-Mikroklima-, Baum- & CSR-Impact-Lab",
+    proto_label: "03 · GreenTech, Citizen Science & CSR-Impact-Konsole",
+    proto_title: "Live-Simulator: Kiez-Mikroklima, Baum-Diagnose & CSR-Impact",
     proto_intro:
-      "In unseren Workshops und Corporate Kiez Impact Days messen Teilnehmende mit Infrarot-Thermometern und Bodensonden reale Abkühlungseffekte und Baumdaten. Teste hier unseren interaktiven Feld-Prototyp (Simulation für die Pilotphase 2026/27):",
-    proto_tool1_badge: "1 · Citizen-Science-Tool",
+      "Bei unseren Workshops und Corporate Kiez Impact Days messen Teilnehmende reale Oberflächentemperaturen (°C), Bodenfeuchte und den Zustand von Straßenbäumen. Teste hier unser interaktives Feld-Instrument und den B2B-CSR-Rechner:",
+    proto_chip_1: "🌡️ Oberflächentemperatur-Sensorik (°C)",
+    proto_chip_2: "🌳 Berliner & Potsdamer Baum-Kompass",
+    proto_chip_3: "📊 Verifizierter B2B-CSR-Rechner",
+    proto_tool1_badge: "Modul 01 · Mikroklima-Telemetrie",
     proto_tool1_title: "Stadthitze- & Hinterhof-Kühlungs-Simulator",
     proto_tool1_sub:
-      "Vergleiche versiegelten Straßenasphalt mit einer bewässerten Baumscheibe oder einem begrünten Hinterhof.",
-    proto_preset1: "Sommer-Hitzewelle (47°C vs. 27°C)",
-    proto_preset2: "Warmer Hinterhof (41°C vs. 24°C)",
-    proto_preset3: "Sonniger Nachmittag (35°C vs. 22°C)",
-    proto_slider_asphalt: "Versiegelter Asphalt (°C):",
-    proto_slider_green: "Bewässerte Baumscheibe / Grüner Hinterhof (°C):",
-    proto_delta_label: "Gemessener Kühlungseffekt (ΔT)",
+      "Wähle ein Berliner Wetterszenario oder bewege die Regler, um versiegelten Straßenasphalt mit einer bewässerten Baumscheibe bzw. einem begrünten Hinterhof zu vergleichen.",
+    proto_preset1: "🔥 Hitzewelle Juli (47°C vs. 27°C)",
+    proto_preset2: "☀️ Warmer Hinterhof (41°C vs. 24°C)",
+    proto_preset3: "🌤️ Sonniger Nachmittag (35°C vs. 22°C)",
+    proto_slider_asphalt: "Versiegelter Straßenasphalt (°C)",
+    proto_slider_green: "Bewässerte Baumscheibe / Grüner Hinterhof (°C)",
+    proto_delta_label: "Gemessene Oberflächen-Abkühlung (ΔT)",
     proto_delta_note:
       "Starker lokaler Kühleffekt: Schattiger, feuchter Boden und Staudenpflanzungen senken die Strahlungshitze für Kinder, Senior*innen und Straßenbäume deutlich.",
-    proto_tool2_badge: "2 · Baum-Kompass & CSR-Vorschau",
-    proto_tool2_title: "Berliner & Potsdamer Straßenbaum-Guide + CSR-Impact",
+    proto_tool2_badge: "Modul 02 · Baum-Diagnose & CSR-Impact-Engine",
+    proto_tool2_title: "Berliner & Potsdamer Baum-Guide + CSR-Rechner",
     proto_tool2_sub:
-      "Wähle eine typische Straßenbaumart für Pflegehinweise im Workshop und sieh, wie ein Corporate Kiez Impact Day messbare CSR-Wirkung erzeugt.",
+      "Prüfe den Pflegebedarf lokaler Straßenbaumarten und berechne den messbaren ESG-/CSR-Output eines Corporate Kiez Impact Days.",
     tree_linden: "🌿 Winterlinde",
     tree_maple: "🍁 Spitzahorn",
     tree_oak: "🌳 Stieleiche",
     tree_chestnut: "🌰 Rosskastanie",
-    tree_water_label: "Gießbedarf im Sommer:",
-    tree_stress_label: "Blatt-Warnsignal bei Trockenstress:",
-    tree_plants_label: "Passende heimische Baumscheiben-Pflanzen:",
-    csr_preview_tag: "Beispiel B2B-CSR-Wirkung (1 Teamtag · 20 Mitarbeitende)",
+    tree_water_label: "Gießprotokoll im Sommer",
+    tree_stress_label: "Optischer Trockenstress-Indikator",
+    tree_plants_label: "Empfohlene Baumscheiben-Begleitpflanzen",
+    csr_preview_tag: "B2B Kiez Impact Day · CSR-Ergebnis-Simulator",
     csr_stat1: "Straßenbäume gegossen & gemulcht",
     csr_stat2: "Baumscheiben / Hofbeete bepflanzt",
-    csr_stat3: "Kita-, Schul- oder Senioren-Workshop finanziert"
+    csr_stat3: "Kostenfreie Kita-/Schul-Workshops finanziert"
   }
 };
 
 // Add English prototype translations
 Object.assign(translations.en, {
   nav_proto: "Prototype",
-  proto_label: "Interactive Pilot Prototype · GreenTech & Citizen Science",
-  proto_title: "Try our Kiez Microclimate, Tree Companion & CSR Impact Lab",
+  proto_label: "03 · GreenTech, Citizen Science & CSR Impact Console",
+  proto_title: "Live Kiez Microclimate, Street Tree & CSR Impact Lab",
   proto_intro:
-    "During our workshops and Corporate Kiez Impact Days, participants use simple handheld infrared thermometers and soil probes to log real microclimate cooling and tree-care data. Test our interactive field prototype below (simulation for 2026/27 pilots):",
-  proto_tool1_badge: "1 · Citizen Science Tool",
+    "During workshops and Corporate Kiez Impact Days, participants log real surface temperature (°C), soil moisture, and street-tree vitality data. Test our interactive field instrument and B2B CSR calculator below:",
+  proto_chip_1: "🌡️ Surface Thermal Sensing (°C)",
+  proto_chip_2: "🌳 Berlin & Potsdam Tree Diagnostics",
+  proto_chip_3: "📊 Verifiable B2B CSR Output",
+  proto_tool1_badge: "Module 01 · Microclimate Telemetry",
   proto_tool1_title: "Urban Heat & Courtyard Cooling Simulator",
   proto_tool1_sub:
-    "Compare sealed street asphalt with a watered street tree bed (Baumscheibe) or greened inner courtyard (Hinterhof).",
-  proto_preset1: "Summer Heatwave (47°C vs 27°C)",
-  proto_preset2: "Warm Day Courtyard (41°C vs 24°C)",
-  proto_preset3: "Mild Sunny Afternoon (35°C vs 22°C)",
-  proto_slider_asphalt: "Sealed Asphalt Surface (°C):",
-  proto_slider_green: "Watered Tree Bed / Green Hinterhof (°C):",
+    "Select a Berlin weather scenario or drag the thermal sliders to compare sealed street asphalt with a watered Baumscheibe or greened Hinterhof.",
+  proto_preset1: "🔥 July Heatwave (47°C vs 27°C)",
+  proto_preset2: "☀️ Warm Hinterhof (41°C vs 24°C)",
+  proto_preset3: "🌤️ Sunny Afternoon (35°C vs 22°C)",
+  proto_slider_asphalt: "Sealed Street Asphalt Surface (°C)",
+  proto_slider_green: "Watered Tree Bed / Green Hinterhof (°C)",
   proto_delta_label: "Measured Surface Cooling Delta (ΔT)",
   proto_delta_note:
     "Strong local cooling effect: Shaded, watered soil and perennial groundcover significantly reduce radiant heat stress for children, seniors, and street trees.",
-  proto_tool2_badge: "2 · Field Companion & CSR Preview",
-  proto_tool2_title: "Berlin & Potsdam Street Tree Guide + CSR Impact Preview",
+  proto_tool2_badge: "Module 02 · Tree Diagnostics & CSR Impact Engine",
+  proto_tool2_title: "Berlin & Potsdam Street Tree Guide + CSR Calculator",
   proto_tool2_sub:
-    "Select a local street tree species to view workshop care guidelines and see how a Corporate Kiez Impact Day translates into verifiable CSR outcomes.",
-  tree_linden: "🌿 Winterlinde (Linden)",
-  tree_maple: "🍁 Spitzahorn (Maple)",
-  tree_oak: "🌳 Stieleiche (Oak)",
-  tree_chestnut: "🌰 Rosskastanie (Chestnut)",
-  tree_water_label: "Summer Watering Need:",
-  tree_stress_label: "Leaf Heat-Stress Sign:",
-  tree_plants_label: "Best Native Baumscheiben Plants:",
-  csr_preview_tag: "Sample B2B CSR Impact Output (1 Team Day · 20 Employees)",
-  csr_stat1: "Street trees watered & mulched",
+    "Inspect species-specific drought care protocols and calculate the verifiable ESG/CSR output of a Corporate Kiez Impact Day.",
+  tree_linden: "🌿 Winterlinde",
+  tree_maple: "🍁 Spitzahorn",
+  tree_oak: "🌳 Stieleiche",
+  tree_chestnut: "🌰 Rosskastanie",
+  tree_water_label: "Summer Deep-Watering Protocol",
+  tree_stress_label: "Visual Drought-Stress Indicator",
+  tree_plants_label: "Recommended Baumscheiben Companion Guild",
+  csr_preview_tag: "B2B Kiez Impact Day · CSR Outcome Simulator",
+  csr_stat1: "Street trees deep-watered & mulched",
   csr_stat2: "Baumscheiben / courtyard beds planted",
-  csr_stat3: "Kita, school or senior workshop funded"
+  csr_stat3: "Free Kita, school or senior workshops funded"
 });
 
 const treeDatabase = {
   linden: {
     en: {
-      water: "80–120 Liters / week (8–12 watering cans in dry weeks)",
+      title: "Tilia cordata · Small-Leaved Lime",
+      role: "Berlin's #1 street tree (~35% of city canopy) · High summer water demand",
+      cans: "💧 8–12 Cans / Wk",
+      water: "80–120 Liters / week (applied slowly in 2 rings around trunk)",
       stress: "Crisp brown leaf margins & early yellowing during July/August droughts",
       plants: "Wild Marjoram (Dost), Meadow Sage (Wiesensalbei) & Bellflower (Glockenblume)"
     },
     de: {
-      water: "80–120 Liter / Woche (8–12 Gießkannen in Trockenperioden)",
+      title: "Tilia cordata · Winterlinde",
+      role: "Berlins häufigster Straßenbaum (~35 % Bestand) · Hoher Wasserbedarf im Sommer",
+      cans: "💧 8–12 Kannen / Wo.",
+      water: "80–120 Liter / Woche (langsam im Wurzelbereich versickern lassen)",
       stress: "Braune, trockene Blattränder & frühe Gelbfärbung im Juli/August",
       plants: "Wilder Dost, Wiesensalbei & Rundblättrige Glockenblume"
     }
   },
   maple: {
     en: {
-      water: "70–100 Liters / week (deep slow watering at root zone)",
+      title: "Acer platanoides · Norway Maple",
+      role: "Common boulevard & courtyard shade tree · Sensitive to compacted soil",
+      cans: "💧 7–10 Cans / Wk",
+      water: "70–100 Liters / week (deep slow watering at outer root zone)",
       stress: "Leaf scorch on sun-exposed canopy & curling leaf tips",
       plants: "Woodruff (Waldmeister), Wild Strawberry (Walderdbeere) & Bugleweed (Günsel)"
     },
     de: {
+      title: "Acer platanoides · Spitzahorn",
+      role: "Typischer Allee- & Hofbaum · Empfindlich bei Bodenverdichtung",
+      cans: "💧 7–10 Kannen / Wo.",
       water: "70–100 Liter / Woche (durchdringendes Gießen im Wurzelbereich)",
       stress: "Blattrandnekrosen auf der Sonnenseite & eingerollte Blattspitzen",
       plants: "Waldmeister, Walderdbeere & Kriechender Günsel"
@@ -433,11 +451,17 @@ const treeDatabase = {
   },
   oak: {
     en: {
-      water: "60–100 Liters / week (especially vital for young street trees < 15 yrs)",
+      title: "Quercus robur · English Oak",
+      role: "Biodiversity keystone species (supports 500+ insect species in Berlin/Brandenburg)",
+      cans: "💧 6–10 Cans / Wk",
+      water: "60–100 Liters / week (critical for young street trees < 15 years)",
       stress: "Premature acorn drop & pale, wilting foliage during prolonged heat",
       plants: "Yarrow (Schafgarbe), Wild Thyme (Sand-Thymian) & Knapweed (Flockenblume)"
     },
     de: {
+      title: "Quercus robur · Stieleiche",
+      role: "Schlüsselart für Artenvielfalt (Lebensraum für über 500 Insektenarten)",
+      cans: "💧 6–10 Kannen / Wo.",
       water: "60–100 Liter / Woche (besonders wichtig für Jungbäume < 15 Jahre)",
       stress: "Vorzeitiger Eichelabwurf & fahles Laub bei anhaltender Hitze",
       plants: "Wiesen-Schafgarbe, Sand-Thymian & Wiesen-Flockenblume"
@@ -445,11 +469,17 @@ const treeDatabase = {
   },
   chestnut: {
     en: {
+      title: "Aesculus hippocastanum · Horse Chestnut",
+      role: "Classic Berlin Biergarten & Hinterhof tree · Shallow heat-sensitive roots",
+      cans: "💧 9–13 Cans / Wk",
       water: "90–130 Liters / week (shallow roots suffer quickly in sealed courtyards)",
       stress: "Early brown blotches (compounded by drought + leaf miner moth)",
       plants: "Cranesbill (Storchschnabel), Lungwort (Lungenkraut) & Lemon Balm"
     },
     de: {
+      title: "Aesculus hippocastanum · Rosskastanie",
+      role: "Klassischer Berliner Hinterhofbaum · Hitzeempfindliche Flachwurzeln",
+      cans: "💧 9–13 Kannen / Wo.",
       water: "90–130 Liter / Woche (Flachwurzler leiden schnell in versiegelten Höfen)",
       stress: "Frühe braune Blattflecken (Trockenstress + Kastanienminiermotte)",
       plants: "Wiesen-Storchschnabel, Echtes Lungenkraut & Zitronenmelisse"
@@ -477,15 +507,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const greenInput = document.getElementById("green-temp");
   const asphaltVal = document.getElementById("asphalt-val");
   const greenVal = document.getElementById("green-val");
+  const asphaltBar = document.getElementById("asphalt-bar");
+  const greenBar = document.getElementById("green-bar");
+  const moisturePill = document.getElementById("moisture-pill");
   const coolingDelta = document.getElementById("cooling-delta");
   const coolingStatus = document.getElementById("cooling-status");
   const presetBtns = document.querySelectorAll(".preset-btn");
 
   // Interactive Tree Guide Elements
   const treeBtns = document.querySelectorAll(".tree-btn");
+  const treeTitleVal = document.getElementById("tree-title-val");
+  const treeRoleVal = document.getElementById("tree-role-val");
+  const treeCansBadge = document.getElementById("tree-cans-badge");
   const treeWaterVal = document.getElementById("tree-water-val");
   const treeStressVal = document.getElementById("tree-stress-val");
   const treePlantsVal = document.getElementById("tree-plants-val");
+
+  // CSR Team Size Calculator Elements
+  const teamBtns = document.querySelectorAll(".team-btn");
+  const csrTreesNum = document.getElementById("csr-trees-num");
+  const csrBedsNum = document.getElementById("csr-beds-num");
+  const csrFreeNum = document.getElementById("csr-free-num");
 
   function updateCoolingSimulation() {
     if (!asphaltInput || !greenInput) return;
@@ -494,11 +536,38 @@ document.addEventListener("DOMContentLoaded", () => {
     asphaltVal.textContent = `${aTemp} °C`;
     greenVal.textContent = `${gTemp} °C`;
 
+    if (asphaltBar) {
+      const aPct = Math.min(100, Math.max(8, ((aTemp - 15) / 45) * 100));
+      asphaltBar.style.width = `${aPct.toFixed(1)}%`;
+    }
+    if (greenBar) {
+      const gPct = Math.min(100, Math.max(8, ((gTemp - 15) / 45) * 100));
+      greenBar.style.width = `${gPct.toFixed(1)}%`;
+    }
+
     const diff = gTemp - aTemp;
     const formattedDiff = diff <= 0 ? `${diff.toFixed(1)} °C` : `+${diff.toFixed(1)} °C`;
     coolingDelta.textContent = formattedDiff;
 
     const absCooling = aTemp - gTemp;
+    if (moisturePill) {
+      if (currentLang === "de") {
+        moisturePill.textContent =
+          absCooling >= 15
+            ? "💧 Bodenfeuchte: Optimal"
+            : absCooling >= 6
+            ? "💧 Bodenfeuchte: Mittel"
+            : "⚠️ Bodenfeuchte: Niedrig";
+      } else {
+        moisturePill.textContent =
+          absCooling >= 15
+            ? "💧 Soil Moisture: Optimal"
+            : absCooling >= 6
+            ? "💧 Soil Moisture: Moderate"
+            : "⚠️ Soil Moisture: Low";
+      }
+    }
+
     if (currentLang === "de") {
       if (absCooling >= 15) {
         coolingStatus.textContent =
@@ -527,9 +596,31 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateTreePanel() {
     if (!treeWaterVal || !treeDatabase[currentTreeKey]) return;
     const data = treeDatabase[currentTreeKey][currentLang] || treeDatabase[currentTreeKey].en;
+    if (treeTitleVal) treeTitleVal.textContent = data.title;
+    if (treeRoleVal) treeRoleVal.textContent = data.role;
+    if (treeCansBadge) treeCansBadge.textContent = data.cans;
     treeWaterVal.textContent = data.water;
     treeStressVal.textContent = data.stress;
     treePlantsVal.textContent = data.plants;
+  }
+
+  if (teamBtns.length > 0) {
+    const csrImpactMap = {
+      "15": { trees: "8–12", beds: "3–4", free: "1" },
+      "25": { trees: "14–18", beds: "5–6", free: "2" },
+      "40": { trees: "22–30", beds: "8–10", free: "3" }
+    };
+    teamBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        teamBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const size = btn.getAttribute("data-team");
+        const metrics = csrImpactMap[size] || csrImpactMap["15"];
+        if (csrTreesNum) csrTreesNum.textContent = metrics.trees;
+        if (csrBedsNum) csrBedsNum.textContent = metrics.beds;
+        if (csrFreeNum) csrFreeNum.textContent = metrics.free;
+      });
+    });
   }
 
   if (asphaltInput && greenInput) {
