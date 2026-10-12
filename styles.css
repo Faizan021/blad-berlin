@@ -72,7 +72,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 
@@ -98,12 +98,13 @@ body {
   line-height: 1.65;
   font-size: 1.0625rem;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 
 /* Ensure grid children never force horizontal overflow on mobile */
 .hero-grid > *,
+.problem-split-layout > *,
 .problem-grid > *,
 .cards-grid > *,
 .proto-grid > *,
@@ -146,18 +147,18 @@ body {
 /* Layout Utilities */
 .container {
   width: 100%;
-  max-width: var(--container-max);
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
 
 .section-padding {
-  padding: 4.5rem 0;
+  padding: 3.5rem 0;
 }
 
 section[id],
 article[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 4.5rem;
 }
 
 /* Lush Sage Green Alternating Sections */
@@ -198,28 +199,28 @@ h1, h2, h3 {
 }
 
 .section-header {
-  max-width: 720px;
-  margin-bottom: 2.5rem;
+  max-width: 880px;
+  margin-bottom: 1.65rem;
 }
 
 .section-label {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--green-hover);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .section-title {
-  font-size: clamp(1.85rem, 4vw, 2.65rem);
-  margin-bottom: 0.85rem;
+  font-size: clamp(1.7rem, 3.2vw, 2.35rem);
+  margin-bottom: 0.6rem;
 }
 
 .section-intro {
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   color: var(--text-muted);
 }
 
@@ -656,65 +657,86 @@ h1, h2, h3 {
 /* ==========================================================================
    The Problem Section & Leaf Spectrum Showcase
    ========================================================================== */
+.problem-split-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
 .spectrum-showcase {
   background-color: #121714;
   border: 2px solid var(--border-strong);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
   box-shadow: var(--shadow-md);
 }
 
 .spectrum-img-container {
+  position: relative;
   width: 100%;
-  max-height: 440px;
+  flex: 1 1 auto;
+  min-height: 240px;
   overflow: hidden;
-  background-color: #111513;
+  background-color: #15241C;
 }
 
 .spectrum-img {
   width: 100%;
   height: 100%;
-  max-height: 440px;
+  max-height: 320px;
   object-fit: cover;
   object-position: center 45%;
   display: block;
 }
 
+.spectrum-overlay-badges {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  right: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
 .spectrum-caption {
-  padding: 1.15rem 1.5rem;
+  padding: 1.05rem 1.35rem;
   background-color: #15241C;
   color: #E8F5EC;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  align-items: flex-start;
-  justify-content: space-between;
   border-top: 1px solid rgba(149, 213, 178, 0.25);
+  flex-shrink: 0;
 }
 
 .spectrum-caption-text {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: #D8F3DC;
-  max-width: 62ch;
+  line-height: 1.5;
+  display: block;
 }
 
 .spectrum-badge {
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  padding: 0.3rem 0.75rem;
+  padding: 0.32rem 0.75rem;
   border-radius: var(--radius-pill);
-  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
 .spectrum-badge-green {
-  background-color: rgba(82, 183, 136, 0.22);
-  color: #95D5B2;
+  background-color: rgba(18, 43, 30, 0.86);
+  color: #B7E4C7;
   border: 1px solid #52B788;
 }
 
 .spectrum-badge-warm {
-  background-color: rgba(240, 138, 101, 0.22);
+  background-color: rgba(45, 22, 15, 0.86);
   color: #F9B59B;
   border: 1px solid #F08A65;
 }
@@ -722,25 +744,35 @@ h1, h2, h3 {
 .problem-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .problem-card {
   background-color: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 2rem;
+  padding: 1.5rem 1.65rem;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.problem-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 0.7rem;
 }
 
 .problem-icon {
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 2.85rem;
+  height: 2.85rem;
+  flex-shrink: 0;
   border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
 }
 
 .icon-heat {
@@ -754,12 +786,15 @@ h1, h2, h3 {
 }
 
 .problem-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.28rem;
+  margin-bottom: 0;
+  line-height: 1.22;
 }
 
 .problem-card p {
   color: var(--text-muted);
+  font-size: 0.96rem;
+  line-height: 1.55;
 }
 
 /* ==========================================================================
@@ -1237,12 +1272,7 @@ h1, h2, h3 {
   }
 
   .section-padding {
-    padding: 5.5rem 0;
-  }
-
-  .spectrum-caption {
-    flex-direction: row;
-    align-items: center;
+    padding: 4.25rem 0;
   }
 
   .problem-grid {
@@ -1282,6 +1312,17 @@ h1, h2, h3 {
   .hero-grid {
     grid-template-columns: 1.12fr 0.88fr;
     gap: 3.5rem;
+  }
+
+  .problem-split-layout {
+    grid-template-columns: 1.06fr 0.94fr;
+    gap: 1.75rem;
+    align-items: stretch;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
   }
 
   .community-box {
