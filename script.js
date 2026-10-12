@@ -120,7 +120,7 @@ const translations = {
     contact_title: "Join the Blad Community or partner with us",
     contact_lead:
       "Whether you are a neighbour, Kita/Familienzentrum educator, or senior group wanting to care for street trees and courtyards, a company planning a Kiez Impact Day, or an incubator / grant reviewer in Berlin & Brandenburg—we would love to hear from you.",
-    contact_direct_label: "Direct email (placeholder):",
+    contact_direct_label: "Direct email:",
 
     form_name_label: "Your name",
     form_name_placeholder: "Alex Meyer",
@@ -135,39 +135,10 @@ const translations = {
       "Tell us about your Kiez, courtyard, group, or partnership idea...",
     form_submit: "Open in email app",
     form_footnote:
-      "No backend or tracking cookies: submitting opens your default email client addressed to [your email].",
-
-    impressum_title: "Impressum (Legal Notice)",
-    legal_badge: "To be completed",
-    impressum_intro:
-      "Placeholder pursuant to § 5 DDG (German Digital Services Act) — to be completed before public launch:",
-    impressum_name_label: "Founding Team / Initiators:",
-    impressum_name_val: "Faizan Ahmed & Maham Shakil · Blad (Pilot Initiative)",
-    impressum_address_label: "Address in Berlin:",
-    impressum_address_val:
-      "[Street, House Number, Postal Code, Berlin — To be completed]",
-    impressum_contact_label: "Contact:",
-    impressum_contact_val:
-      "Email: [your email] · Phone: [Phone number — To be completed]",
-    impressum_resp_label: "Responsible for content (§ 18 Abs. 2 MStV):",
-    impressum_resp_val: "Faizan Ahmed & Maham Shakil · [Berlin Address — To be completed]",
-
-    privacy_title: "Datenschutz (Privacy Policy)",
-    privacy_intro:
-      "Placeholder pursuant to GDPR (DSGVO) — to be completed before public launch:",
-    privacy_item1:
-      "<strong>Controller:</strong> Faizan Ahmed & Maham Shakil, Berlin ([Address & [your email] — To be completed])",
-    privacy_item2:
-      "<strong>No cookies or analytics:</strong> This website uses no tracking cookies, analytics scripts, or form databases.",
-    privacy_item3:
-      "<strong>Email contact:</strong> When you contact us via email (mailto), your email address and message are processed solely to reply to your inquiry. [Add retention period & legal basis under Art. 6(1) GDPR — To be completed]",
-    privacy_item4:
-      "<strong>Hosting & Fonts:</strong> [Complete details on your web host server logs and consider self-hosting fonts before production if required by your privacy review — To be completed]",
+      "Submitting opens your default email client addressed directly to faizan.crm1@gmail.com.",
 
     footer_tagline:
-      "Hands-on nature education & climate action for Berlin & Brandenburg communities · Pilot 2026/27",
-    footer_impressum: "Impressum (To be completed)",
-    footer_privacy: "Datenschutz (To be completed)"
+      "Hands-on nature education & climate action for Berlin & Brandenburg communities · Pilot 2026/27"
   },
 
   de: {
@@ -285,7 +256,7 @@ const translations = {
     contact_title: "Werde Teil der Blad Community oder Partner",
     contact_lead:
       "Ob du als Nachbar*in, Kita-/Familienzentrum-Team oder Seniorengruppe Straßenbäume und Hinterhöfe pflegen möchtest, als Unternehmen einen Kiez Impact Day planst oder als Inkubator bzw. Förderprogramm in Berlin & Brandenburg auf uns schaust – wir freuen uns auf deine Nachricht.",
-    contact_direct_label: "Direkte E-Mail (Platzhalter):",
+    contact_direct_label: "Direkte E-Mail:",
 
     form_name_label: "Dein Name",
     form_name_placeholder: "Alex Meyer",
@@ -301,39 +272,10 @@ const translations = {
       "Erzähl uns kurz von deinem Kiez, deinem Hinterhof, deiner Gruppe oder deiner Partnerschaftsidee...",
     form_submit: "Im E-Mail-Programm öffnen",
     form_footnote:
-      "Kein Backend, keine Tracking-Cookies: Beim Absenden öffnet sich dein E-Mail-Programm mit einer Nachricht an [your email].",
-
-    impressum_title: "Impressum",
-    legal_badge: "Noch zu ergänzen",
-    impressum_intro:
-      "Platzhalter gemäß § 5 DDG – vor Veröffentlichung vollständig auszufüllen:",
-    impressum_name_label: "Gründerteam / Initiator*innen:",
-    impressum_name_val: "Faizan Ahmed & Maham Shakil · Blad (Pilot-Initiative)",
-    impressum_address_label: "Anschrift in Berlin:",
-    impressum_address_val:
-      "[Straße, Hausnummer, PLZ, Berlin – noch zu ergänzen]",
-    impressum_contact_label: "Kontakt:",
-    impressum_contact_val:
-      "E-Mail: [your email] · Telefon: [Telefonnummer – noch zu ergänzen]",
-    impressum_resp_label: "Inhaltlich verantwortlich (§ 18 Abs. 2 MStV):",
-    impressum_resp_val: "Faizan Ahmed & Maham Shakil · [Anschrift in Berlin – noch zu ergänzen]",
-
-    privacy_title: "Datenschutz",
-    privacy_intro:
-      "Platzhalter gemäß DSGVO – vor Veröffentlichung vollständig auszufüllen:",
-    privacy_item1:
-      "<strong>Verantwortliche Stelle:</strong> Faizan Ahmed & Maham Shakil, Berlin ([Anschrift & [your email] – noch zu ergänzen])",
-    privacy_item2:
-      "<strong>Keine Cookies oder Analyse-Tools:</strong> Diese Website verwendet keine Tracking-Cookies, Analyse-Skripte oder Formulardatenbanken.",
-    privacy_item3:
-      "<strong>Kontakt per E-Mail:</strong> Bei einer Kontaktaufnahme per E-Mail (mailto) werden deine Angaben ausschließlich zur Bearbeitung deiner Anfrage verarbeitet. [Speicherdauer & Rechtsgrundlage nach Art. 6 Abs. 1 DSGVO – noch zu ergänzen]",
-    privacy_item4:
-      "<strong>Hosting & Schriftarten:</strong> [Details zu Server-Logfiles des Hosters ergänzen und vor Livegang ggf. lokales Einbinden der Schriftarten prüfen – noch zu ergänzen]",
+      "Beim Absenden öffnet sich dein E-Mail-Programm direkt mit einer Nachricht an faizan.crm1@gmail.com.",
 
     footer_tagline:
       "Praktische Naturbildung & lokaler Klimaschutz für Communities in Berlin & Brandenburg · Pilotphase 2026/27",
-    footer_impressum: "Impressum (noch zu ergänzen)",
-    footer_privacy: "Datenschutz (noch zu ergänzen)",
 
     nav_proto: "Prototyp",
     proto_label: "03 · GreenTech, Citizen Science & CSR-Impact-Konsole",
@@ -735,7 +677,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const body = encodeURIComponent(
         `Name: ${name}\nRole: ${role}\n\n${message}`
       );
-      window.location.href = `mailto:[your email]?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:faizan.crm1@gmail.com?subject=${subject}&body=${body}`;
     });
   }
 
