@@ -333,11 +333,134 @@ const translations = {
     footer_tagline:
       "Praktische Naturbildung & lokaler Klimaschutz für Communities in Berlin & Brandenburg · Pilotphase 2026/27",
     footer_impressum: "Impressum (noch zu ergänzen)",
-    footer_privacy: "Datenschutz (noch zu ergänzen)"
+    footer_privacy: "Datenschutz (noch zu ergänzen)",
+
+    nav_proto: "Prototyp",
+    proto_label: "Interaktiver Pilot-Prototyp · GreenTech & Citizen Science",
+    proto_title: "Teste unser Kiez-Mikroklima-, Baum- & CSR-Impact-Lab",
+    proto_intro:
+      "In unseren Workshops und Corporate Kiez Impact Days messen Teilnehmende mit Infrarot-Thermometern und Bodensonden reale Abkühlungseffekte und Baumdaten. Teste hier unseren interaktiven Feld-Prototyp (Simulation für die Pilotphase 2026/27):",
+    proto_tool1_badge: "1 · Citizen-Science-Tool",
+    proto_tool1_title: "Stadthitze- & Hinterhof-Kühlungs-Simulator",
+    proto_tool1_sub:
+      "Vergleiche versiegelten Straßenasphalt mit einer bewässerten Baumscheibe oder einem begrünten Hinterhof.",
+    proto_preset1: "Sommer-Hitzewelle (47°C vs. 27°C)",
+    proto_preset2: "Warmer Hinterhof (41°C vs. 24°C)",
+    proto_preset3: "Sonniger Nachmittag (35°C vs. 22°C)",
+    proto_slider_asphalt: "Versiegelter Asphalt (°C):",
+    proto_slider_green: "Bewässerte Baumscheibe / Grüner Hinterhof (°C):",
+    proto_delta_label: "Gemessener Kühlungseffekt (ΔT)",
+    proto_delta_note:
+      "Starker lokaler Kühleffekt: Schattiger, feuchter Boden und Staudenpflanzungen senken die Strahlungshitze für Kinder, Senior*innen und Straßenbäume deutlich.",
+    proto_tool2_badge: "2 · Baum-Kompass & CSR-Vorschau",
+    proto_tool2_title: "Berliner & Potsdamer Straßenbaum-Guide + CSR-Impact",
+    proto_tool2_sub:
+      "Wähle eine typische Straßenbaumart für Pflegehinweise im Workshop und sieh, wie ein Corporate Kiez Impact Day messbare CSR-Wirkung erzeugt.",
+    tree_linden: "🌿 Winterlinde",
+    tree_maple: "🍁 Spitzahorn",
+    tree_oak: "🌳 Stieleiche",
+    tree_chestnut: "🌰 Rosskastanie",
+    tree_water_label: "Gießbedarf im Sommer:",
+    tree_stress_label: "Blatt-Warnsignal bei Trockenstress:",
+    tree_plants_label: "Passende heimische Baumscheiben-Pflanzen:",
+    csr_preview_tag: "Beispiel B2B-CSR-Wirkung (1 Teamtag · 20 Mitarbeitende)",
+    csr_stat1: "Straßenbäume gegossen & gemulcht",
+    csr_stat2: "Baumscheiben / Hofbeete bepflanzt",
+    csr_stat3: "Kita-, Schul- oder Senioren-Workshop finanziert"
+  }
+};
+
+// Add English prototype translations
+Object.assign(translations.en, {
+  nav_proto: "Prototype",
+  proto_label: "Interactive Pilot Prototype · GreenTech & Citizen Science",
+  proto_title: "Try our Kiez Microclimate, Tree Companion & CSR Impact Lab",
+  proto_intro:
+    "During our workshops and Corporate Kiez Impact Days, participants use simple handheld infrared thermometers and soil probes to log real microclimate cooling and tree-care data. Test our interactive field prototype below (simulation for 2026/27 pilots):",
+  proto_tool1_badge: "1 · Citizen Science Tool",
+  proto_tool1_title: "Urban Heat & Courtyard Cooling Simulator",
+  proto_tool1_sub:
+    "Compare sealed street asphalt with a watered street tree bed (Baumscheibe) or greened inner courtyard (Hinterhof).",
+  proto_preset1: "Summer Heatwave (47°C vs 27°C)",
+  proto_preset2: "Warm Day Courtyard (41°C vs 24°C)",
+  proto_preset3: "Mild Sunny Afternoon (35°C vs 22°C)",
+  proto_slider_asphalt: "Sealed Asphalt Surface (°C):",
+  proto_slider_green: "Watered Tree Bed / Green Hinterhof (°C):",
+  proto_delta_label: "Measured Surface Cooling Delta (ΔT)",
+  proto_delta_note:
+    "Strong local cooling effect: Shaded, watered soil and perennial groundcover significantly reduce radiant heat stress for children, seniors, and street trees.",
+  proto_tool2_badge: "2 · Field Companion & CSR Preview",
+  proto_tool2_title: "Berlin & Potsdam Street Tree Guide + CSR Impact Preview",
+  proto_tool2_sub:
+    "Select a local street tree species to view workshop care guidelines and see how a Corporate Kiez Impact Day translates into verifiable CSR outcomes.",
+  tree_linden: "🌿 Winterlinde (Linden)",
+  tree_maple: "🍁 Spitzahorn (Maple)",
+  tree_oak: "🌳 Stieleiche (Oak)",
+  tree_chestnut: "🌰 Rosskastanie (Chestnut)",
+  tree_water_label: "Summer Watering Need:",
+  tree_stress_label: "Leaf Heat-Stress Sign:",
+  tree_plants_label: "Best Native Baumscheiben Plants:",
+  csr_preview_tag: "Sample B2B CSR Impact Output (1 Team Day · 20 Employees)",
+  csr_stat1: "Street trees watered & mulched",
+  csr_stat2: "Baumscheiben / courtyard beds planted",
+  csr_stat3: "Kita, school or senior workshop funded"
+});
+
+const treeDatabase = {
+  linden: {
+    en: {
+      water: "80–120 Liters / week (8–12 watering cans in dry weeks)",
+      stress: "Crisp brown leaf margins & early yellowing during July/August droughts",
+      plants: "Wild Marjoram (Dost), Meadow Sage (Wiesensalbei) & Bellflower (Glockenblume)"
+    },
+    de: {
+      water: "80–120 Liter / Woche (8–12 Gießkannen in Trockenperioden)",
+      stress: "Braune, trockene Blattränder & frühe Gelbfärbung im Juli/August",
+      plants: "Wilder Dost, Wiesensalbei & Rundblättrige Glockenblume"
+    }
+  },
+  maple: {
+    en: {
+      water: "70–100 Liters / week (deep slow watering at root zone)",
+      stress: "Leaf scorch on sun-exposed canopy & curling leaf tips",
+      plants: "Woodruff (Waldmeister), Wild Strawberry (Walderdbeere) & Bugleweed (Günsel)"
+    },
+    de: {
+      water: "70–100 Liter / Woche (durchdringendes Gießen im Wurzelbereich)",
+      stress: "Blattrandnekrosen auf der Sonnenseite & eingerollte Blattspitzen",
+      plants: "Waldmeister, Walderdbeere & Kriechender Günsel"
+    }
+  },
+  oak: {
+    en: {
+      water: "60–100 Liters / week (especially vital for young street trees < 15 yrs)",
+      stress: "Premature acorn drop & pale, wilting foliage during prolonged heat",
+      plants: "Yarrow (Schafgarbe), Wild Thyme (Sand-Thymian) & Knapweed (Flockenblume)"
+    },
+    de: {
+      water: "60–100 Liter / Woche (besonders wichtig für Jungbäume < 15 Jahre)",
+      stress: "Vorzeitiger Eichelabwurf & fahles Laub bei anhaltender Hitze",
+      plants: "Wiesen-Schafgarbe, Sand-Thymian & Wiesen-Flockenblume"
+    }
+  },
+  chestnut: {
+    en: {
+      water: "90–130 Liters / week (shallow roots suffer quickly in sealed courtyards)",
+      stress: "Early brown blotches (compounded by drought + leaf miner moth)",
+      plants: "Cranesbill (Storchschnabel), Lungwort (Lungenkraut) & Lemon Balm"
+    },
+    de: {
+      water: "90–130 Liter / Woche (Flachwurzler leiden schnell in versiegelten Höfen)",
+      stress: "Frühe braune Blattflecken (Trockenstress + Kastanienminiermotte)",
+      plants: "Wiesen-Storchschnabel, Echtes Lungenkraut & Zitronenmelisse"
+    }
   }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  let currentLang = "en";
+  let currentTreeKey = "linden";
+
   const langButtons = document.querySelectorAll(".lang-btn");
   const i18nElements = document.querySelectorAll("[data-i18n]");
   const i18nPlaceholders = document.querySelectorAll("[data-i18n-placeholder]");
@@ -349,8 +472,101 @@ document.addEventListener("DOMContentLoaded", () => {
     "privacy_item4"
   ]);
 
+  // Interactive Microclimate Calculator Elements
+  const asphaltInput = document.getElementById("asphalt-temp");
+  const greenInput = document.getElementById("green-temp");
+  const asphaltVal = document.getElementById("asphalt-val");
+  const greenVal = document.getElementById("green-val");
+  const coolingDelta = document.getElementById("cooling-delta");
+  const coolingStatus = document.getElementById("cooling-status");
+  const presetBtns = document.querySelectorAll(".preset-btn");
+
+  // Interactive Tree Guide Elements
+  const treeBtns = document.querySelectorAll(".tree-btn");
+  const treeWaterVal = document.getElementById("tree-water-val");
+  const treeStressVal = document.getElementById("tree-stress-val");
+  const treePlantsVal = document.getElementById("tree-plants-val");
+
+  function updateCoolingSimulation() {
+    if (!asphaltInput || !greenInput) return;
+    const aTemp = parseFloat(asphaltInput.value);
+    const gTemp = parseFloat(greenInput.value);
+    asphaltVal.textContent = `${aTemp} °C`;
+    greenVal.textContent = `${gTemp} °C`;
+
+    const diff = gTemp - aTemp;
+    const formattedDiff = diff <= 0 ? `${diff.toFixed(1)} °C` : `+${diff.toFixed(1)} °C`;
+    coolingDelta.textContent = formattedDiff;
+
+    const absCooling = aTemp - gTemp;
+    if (currentLang === "de") {
+      if (absCooling >= 15) {
+        coolingStatus.textContent =
+          "Starker lokaler Kühleffekt: Schattiger, feuchter Boden und Staudenpflanzungen senken die Strahlungshitze für Kinder, Senior*innen und Straßenbäume deutlich.";
+      } else if (absCooling >= 6) {
+        coolingStatus.textContent =
+          "Spürbare Mikroklima-Entlastung: Begrünte Baumscheiben und Hinterhöfe speichern Feuchtigkeit und heizen sich deutlich langsamer auf als Asphalt.";
+      } else {
+        coolingStatus.textContent =
+          "Geringer Temperaturunterschied: Zusätzliche Bewässerung, Entsiegelung und Schattenpflanzen helfen, die lokale Abkühlung weiter zu steigern.";
+      }
+    } else {
+      if (absCooling >= 15) {
+        coolingStatus.textContent =
+          "Strong local cooling effect: Shaded, watered soil and perennial groundcover significantly reduce radiant heat stress for children, seniors, and street trees.";
+      } else if (absCooling >= 6) {
+        coolingStatus.textContent =
+          "Noticeable microclimate relief: Greened tree beds and courtyards retain moisture and heat up far more slowly than sealed street asphalt.";
+      } else {
+        coolingStatus.textContent =
+          "Small temperature difference: Additional watering, mulching, and shade vegetation can further increase local neighbourhood cooling.";
+      }
+    }
+  }
+
+  function updateTreePanel() {
+    if (!treeWaterVal || !treeDatabase[currentTreeKey]) return;
+    const data = treeDatabase[currentTreeKey][currentLang] || treeDatabase[currentTreeKey].en;
+    treeWaterVal.textContent = data.water;
+    treeStressVal.textContent = data.stress;
+    treePlantsVal.textContent = data.plants;
+  }
+
+  if (asphaltInput && greenInput) {
+    asphaltInput.addEventListener("input", () => {
+      presetBtns.forEach((b) => b.classList.remove("active"));
+      updateCoolingSimulation();
+    });
+    greenInput.addEventListener("input", () => {
+      presetBtns.forEach((b) => b.classList.remove("active"));
+      updateCoolingSimulation();
+    });
+
+    presetBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        presetBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        asphaltInput.value = btn.getAttribute("data-asphalt");
+        greenInput.value = btn.getAttribute("data-green");
+        updateCoolingSimulation();
+      });
+    });
+  }
+
+  if (treeBtns.length > 0) {
+    treeBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        treeBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentTreeKey = btn.getAttribute("data-tree");
+        updateTreePanel();
+      });
+    });
+  }
+
   function setLanguage(lang) {
     if (!translations[lang]) return;
+    currentLang = lang;
     document.documentElement.lang = lang;
 
     i18nElements.forEach((el) => {
@@ -378,6 +594,9 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.classList.toggle("active", isActive);
       btn.setAttribute("aria-pressed", String(isActive));
     });
+
+    updateCoolingSimulation();
+    updateTreePanel();
   }
 
   langButtons.forEach((btn) => {
@@ -407,13 +626,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Mailto Form Handler (no backend)
-  const mailtoForm = document.getElementById("mailto-form");
+  const mailtoForm = document.getElementById("contact-form") || document.getElementById("mailto-form");
   if (mailtoForm) {
     mailtoForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = document.getElementById("sender-name").value.trim();
-      const role = document.getElementById("sender-role").value;
-      const message = document.getElementById("sender-message").value.trim();
+      const nameEl = document.getElementById("contact-name") || document.getElementById("sender-name");
+      const roleEl = document.getElementById("contact-role") || document.getElementById("sender-role");
+      const msgEl = document.getElementById("contact-message") || document.getElementById("sender-message");
+
+      const name = nameEl ? nameEl.value.trim() : "";
+      const role = roleEl ? roleEl.value : "";
+      const message = msgEl ? msgEl.value.trim() : "";
 
       const subject = encodeURIComponent(
         `Blad Community / Inquiry (${role}) — ${name}`

@@ -41,6 +41,7 @@
         <ul class="nav-list">
           <li><a href="#problem" data-i18n="nav_problem">The Problem</a></li>
           <li><a href="#what-we-do" data-i18n="nav_what">What We Do</a></li>
+          <li><a href="#prototype" data-i18n="nav_proto">Prototype</a></li>
           <li><a href="#community" data-i18n="nav_community">Community</a></li>
           <li><a href="#how-it-works" data-i18n="nav_how">How It Works</a></li>
           <li><a href="#roadmap" data-i18n="nav_pilot">Pilot Phase</a></li>
@@ -67,6 +68,7 @@
       <ul class="mobile-nav-list">
         <li><a href="#problem" data-i18n="nav_problem">The Problem</a></li>
         <li><a href="#what-we-do" data-i18n="nav_what">What We Do</a></li>
+        <li><a href="#prototype" data-i18n="nav_proto">Prototype</a></li>
         <li><a href="#community" data-i18n="nav_community">Community</a></li>
         <li><a href="#how-it-works" data-i18n="nav_how">How It Works</a></li>
         <li><a href="#roadmap" data-i18n="nav_pilot">Pilot Phase</a></li>
@@ -253,6 +255,119 @@
               </p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3.5 Interactive Pilot Prototype: Kiez Microclimate & CSR Impact Lab -->
+    <section id="prototype" class="section-padding">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label" data-i18n="proto_label">Interactive Pilot Prototype · GreenTech &amp; Citizen Science</span>
+          <h2 class="section-title" data-i18n="proto_title">Try our Kiez Microclimate, Tree Companion &amp; CSR Impact Lab</h2>
+          <p class="section-intro" data-i18n="proto_intro">
+            During our workshops and Corporate Kiez Impact Days, participants use simple handheld infrared thermometers and soil probes to log real microclimate cooling and tree-care data. Test our interactive field prototype below (simulation for 2026/27 pilots):
+          </p>
+        </div>
+
+        <div class="proto-grid reveal">
+          <!-- Tool 1: Urban Heat Island & Cooling Calculator -->
+          <div class="proto-card">
+            <div class="proto-card-header">
+              <span class="status-badge" data-i18n="proto_tool1_badge">1 · Citizen Science Tool</span>
+              <h3 data-i18n="proto_tool1_title">Urban Heat &amp; Courtyard Cooling Simulator</h3>
+              <p class="proto-sub" data-i18n="proto_tool1_sub">
+                Compare sealed street asphalt with a watered street tree bed (Baumscheibe) or greened inner courtyard (Hinterhof).
+              </p>
+            </div>
+
+            <div class="proto-presets" role="group" aria-label="Sample Berlin and Potsdam microclimate presets">
+              <button type="button" class="preset-btn active" data-asphalt="47" data-green="27" data-i18n="proto_preset1">Summer Heatwave (47°C vs 27°C)</button>
+              <button type="button" class="preset-btn" data-asphalt="41" data-green="24" data-i18n="proto_preset2">Warm Day Courtyard (41°C vs 24°C)</button>
+              <button type="button" class="preset-btn" data-asphalt="35" data-green="22" data-i18n="proto_preset3">Mild Sunny Afternoon (35°C vs 22°C)</button>
+            </div>
+
+            <div class="proto-sliders">
+              <div class="slider-group">
+                <div class="slider-label-row">
+                  <label for="asphalt-temp" data-i18n="proto_slider_asphalt">Sealed Asphalt Surface (°C):</label>
+                  <strong id="asphalt-val" class="temp-val temp-hot">47 °C</strong>
+                </div>
+                <input type="range" id="asphalt-temp" min="25" max="55" value="47" class="proto-range range-hot">
+              </div>
+
+              <div class="slider-group">
+                <div class="slider-label-row">
+                  <label for="green-temp" data-i18n="proto_slider_green">Watered Tree Bed / Green Hinterhof (°C):</label>
+                  <strong id="green-val" class="temp-val temp-cool">27 °C</strong>
+                </div>
+                <input type="range" id="green-temp" min="16" max="40" value="27" class="proto-range range-cool">
+              </div>
+            </div>
+
+            <div class="proto-result-box" aria-live="polite">
+              <div class="result-metric">
+                <span class="result-label" data-i18n="proto_delta_label">Measured Surface Cooling Delta (ΔT)</span>
+                <span id="cooling-delta" class="result-big">-20.0 °C</span>
+              </div>
+              <p id="cooling-status" class="result-note" data-i18n="proto_delta_note">
+                Strong local cooling effect: Shaded, watered soil and perennial groundcover significantly reduce radiant heat stress for children, seniors, and street trees.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tool 2: Berlin & Brandenburg Street Tree Field Companion -->
+          <div class="proto-card">
+            <div class="proto-card-header">
+              <span class="status-badge" data-i18n="proto_tool2_badge">2 · Field Companion &amp;CSR Preview</span>
+              <h3 data-i18n="proto_tool2_title">Berlin &amp; Potsdam Street Tree Guide + CSR Impact Preview</h3>
+              <p class="proto-sub" data-i18n="proto_tool2_sub">
+                Select a local street tree species to view workshop care guidelines and see how a Corporate Kiez Impact Day translates into verifiable CSR outcomes.
+              </p>
+            </div>
+
+            <div class="tree-selector" role="group" aria-label="Select Berlin street tree species">
+              <button type="button" class="tree-btn active" data-tree="linden" data-i18n="tree_linden">🌿 Winterlinde (Linden)</button>
+              <button type="button" class="tree-btn" data-tree="maple" data-i18n="tree_maple">🍁 Spitzahorn (Maple)</button>
+              <button type="button" class="tree-btn" data-tree="oak" data-i18n="tree_oak">🌳 Stieleiche (Oak)</button>
+              <button type="button" class="tree-btn" data-tree="chestnut" data-i18n="tree_chestnut">🌰 Rosskastanie (Chestnut)</button>
+            </div>
+
+            <div class="tree-info-panel" aria-live="polite">
+              <div class="tree-info-row">
+                <span class="tree-info-key" data-i18n="tree_water_label">Summer Watering Need:</span>
+                <strong id="tree-water-val">80–120 Liters / week (8–12 watering cans)</strong>
+              </div>
+              <div class="tree-info-row">
+                <span class="tree-info-key" data-i18n="tree_stress_label">Leaf Heat-Stress Sign:</span>
+                <span id="tree-stress-val">Crisp brown leaf edges &amp; early leaf drop during July/August dry spells</span>
+              </div>
+              <div class="tree-info-row">
+                <span class="tree-info-key" data-i18n="tree_plants_label">Best Native Baumscheiben Plants:</span>
+                <span id="tree-plants-val">Wild Marjoram (Dost), Meadow Sage (Wiesensalbei) &amp; Bellflower (Glockenblume)</span>
+              </div>
+            </div>
+
+            <div class="csr-preview-box">
+              <div class="csr-preview-header">
+                <span class="csr-tag" data-i18n="csr_preview_tag">Sample B2B CSR Impact Output (1 Team Day · 20 Employees)</span>
+              </div>
+              <div class="csr-metrics-row">
+                <div class="csr-stat">
+                  <strong>6–8</strong>
+                  <span data-i18n="csr_stat1">Street trees watered &amp; mulched</span>
+                </div>
+                <div class="csr-stat">
+                  <strong>2–3</strong>
+                  <span data-i18n="csr_stat2">Baumscheiben / courtyard beds planted</span>
+                </div>
+                <div class="csr-stat">
+                  <strong>1 Free</strong>
+                  <span data-i18n="csr_stat3">Kita, school or senior workshop funded</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
