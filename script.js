@@ -50,10 +50,10 @@ const translations = {
       "Practical nature education and cooling action right in the Kiez",
     what_intro:
       "Combining Ecological Impact (urban cooling & biodiversity) with Social Impact (intergenerational community learning).",
-    what_card1_tag: "Kitas, Schools & Seniors",
+    what_card1_tag: "Kitas, Familienzentren & Seniors",
     what_card1_title: "Intergenerational nature & tree-care workshops",
     what_card1_text:
-      "Hands-on discovery for Kita groups, school classes, families, and older neighbours: adopting and watering local street trees (complementing civic efforts like Gieß den Kiez), spotting birds and insects, and sharing knowledge across generations.",
+      "Hands-on discovery for Kita groups, Familienzentren (family centres), schools, and older neighbours—aligned with the Berliner Bildungsprogramm (BBP): adopting and watering local street trees, spotting birds and insects, and sharing knowledge across generations.",
     what_card2_tag: "Youth, Adults & Neighbours",
     what_card2_title: "Kiez & courtyard citizen science",
     what_card2_text:
@@ -67,28 +67,28 @@ const translations = {
     comm_title: "Everyone in the Kiez has a role",
     comm_intro:
       "Street trees and green courtyards need care all summer long—especially during school holidays when droughts peak. Blad connects five neighbourhood groups into one continuous care network:",
-    comm_group_1: "🌱 Kitas & Schools",
+    comm_group_1: "🌱 Kitas, Familienzentren & Schools",
     comm_group_2: "🌿 Neighbours & Families",
     comm_group_3: "🌳 Seniors & Retirees",
     comm_group_4: "🏡 Courtyard & Tree Initiatives",
     comm_group_5: "🏢 Company Teams",
     comm_card_title: "Join the Blad Community",
     comm_card_text:
-      "Want to adopt a street tree on your block, green an inner courtyard (Hinterhof), or bring a workshop to your Kita, school, or senior group?",
+      "Want to adopt a street tree on your block, green an inner courtyard (Hinterhof), or bring a free workshop to your Kita, Familienzentrum, school, or senior group?",
     comm_card_btn: "Join via Email",
     comm_card_sublink: "Or use the contact form below →",
 
     how_label: "03 · Social Business & Impact Model",
     how_title: "How our hybrid impact model works in the neighbourhood",
-    how_step1_title: "Free access for Kitas, schools & communities",
+    how_step1_title: "Free access for Kitas, Familienzentren & schools",
     how_step1_text:
-      "Educational workshops and neighbourhood sessions are free of charge for participating Kitas, schools, senior groups, and residents so every Kiez can participate regardless of income.",
+      "Educational workshops and neighbourhood sessions are free of charge for participating Kitas, Familienzentren (family centres), schools, senior groups, and residents so every Kiez can participate regardless of income.",
     how_step2_title: "Hybrid model: Company days & planned grants",
     how_step2_text:
-      "Our social business model combines earned revenue from paid corporate Kiez Impact Days with planned public climate, education, and neighbourhood grants.",
+      "Our social business model combines earned revenue from paid corporate Kiez Impact Days with planned public climate, Bezirksamt, education, and neighbourhood grants.",
     how_step3_title: "Co-created with local Kiez partners",
     how_step3_text:
-      "Every workshop, tree-bed planting, and courtyard greening is delivered with local neighbourhood centres, educators, civic tree-watering initiatives, and green-space partners.",
+      "Every workshop, tree-bed planting, and courtyard greening is delivered with local Familienzentren, neighbourhood centres (Stadtteilzentren), educators, civic tree-watering initiatives, and green-space partners.",
 
     pilot_label: "04 · Pilot & Incubation Roadmap (2026/27)",
     pilot_title: "From concept validation to measurable neighbourhood impact",
@@ -98,9 +98,9 @@ const translations = {
     stage_2_label: "Stage 2",
     stage_3_label: "Stage 3",
     status_planned: "Planned",
-    pilot_stage1_title: "Talk to communities, Kitas, schools & partners",
+    pilot_stage1_title: "Talk to communities, Kitas, Familienzentren & partners",
     pilot_stage1_text:
-      "Conduct structured discovery with educators, neighbourhood centres, senior groups, civic tree initiatives, and CSR teams in Berlin and Brandenburg to co-design workshop and courtyard-greening formats.",
+      "Conduct structured discovery with educators, Familienzentren (family centres), neighbourhood centres, senior groups, civic tree initiatives, and CSR teams in Berlin and Brandenburg to co-design workshop and courtyard-greening formats.",
     pilot_stage2_title: "Run first pilot workshops",
     pilot_stage2_text:
       "Deliver initial hands-on pilot sessions on bird and insect identification, street tree watering, courtyard cooling, and microclimate heat measurement while evaluating social and ecological outcomes.",
@@ -119,14 +119,14 @@ const translations = {
     contact_label: "06 · Join & Contact",
     contact_title: "Join the Blad Community or partner with us",
     contact_lead:
-      "Whether you are a neighbour, educator, or senior group wanting to care for street trees and courtyards, a company planning a Kiez Impact Day, or an incubator / grant reviewer in Berlin & Brandenburg—we would love to hear from you.",
+      "Whether you are a neighbour, Kita/Familienzentrum educator, or senior group wanting to care for street trees and courtyards, a company planning a Kiez Impact Day, or an incubator / grant reviewer in Berlin & Brandenburg—we would love to hear from you.",
     contact_direct_label: "Direct email (placeholder):",
 
     form_name_label: "Your name",
     form_name_placeholder: "Alex Meyer",
     form_role_label: "I am reaching out as",
     form_role_opt_comm: "Community member (Neighbour, adult, family, or senior)",
-    form_role_opt1: "Kita or school staff",
+    form_role_opt1: "Kita, Familienzentrum, or school staff",
     form_role_opt2: "Company (Kiez Impact Day / CSR / HR)",
     form_role_opt3: "Incubator, grant reviewer, or local partner",
     form_role_opt4: "Other inquiry",
@@ -186,11 +186,11 @@ const translations = {
     hero_headline:
       "Praktische Naturbildung & lokaler Klimaschutz für Berliner Kieze",
     hero_subline:
-      "Wir unterstützen Nachbarschaften dabei, vom Klimastress ins gemeinsame Handeln zu kommen: Kitas, Schulen, Erwachsene, Senior*innen und Unternehmen pflegen gemeinsam Straßenbäume, begrünen Hinterhöfe, entdecken Vögel und Insekten und messen Stadthitze.",
+      "Wir unterstützen Nachbarschaften dabei, vom Klimastress ins gemeinsame Handeln zu kommen: Kitas, Familienzentren, Schulen, Erwachsene, Senior*innen und Unternehmen pflegen gemeinsam Straßenbäume, begrünen Hinterhöfe, entdecken Vögel und Insekten und messen Stadthitze.",
     hero_cta_partner: "Teil der Blad Community werden",
     hero_cta_book: "Kiez Impact Day anfragen",
     hero_note:
-      "Für Nachbar*innen jeden Alters, Kitas & Schulen, CSR-/HR-Teams sowie Inkubatoren und Förderpartner.",
+      "Für Nachbar*innen jeden Alters, Kitas, Familienzentren & Schulen, CSR-/HR-Teams sowie Inkubatoren und Förderpartner.",
     hero_card_tag: "BERLINER BAUMKRONE · SONNENDURCHFLUTETES LINDENBLATT",
     pillar_1: "Vögel & Insekten",
     pillar_2: "Straßenbäume & Hinterhöfe",
@@ -215,10 +215,10 @@ const translations = {
       "Praktische Naturbildung und spürbare Abkühlung direkt im Kiez",
     what_intro:
       "Wir verbinden ökologische Wirkung (Stadtkühlung & Artenvielfalt) mit sozialer Wirkung (generationsübergreifendes Lernen im Quartier).",
-    what_card1_tag: "Kitas, Schulen & Senior*innen",
+    what_card1_tag: "Kitas, Familienzentren & Senior*innen",
     what_card1_title: "Generationsübergreifende Natur- & Baum-Workshops",
     what_card1_text:
-      "Praxisnahes Entdecken für Kita-Gruppen, Schulklassen, Familien und ältere Nachbar*innen: Straßenbäume adoptieren und gießen (ergänzend zu Initiativen wie Gieß den Kiez), Vögel und Insekten bestimmen und Wissen zwischen den Generationen teilen.",
+      "Praxisnahes Entdecken für Kita-Gruppen, Familienzentren, Schulklassen und ältere Nachbar*innen – orientiert am Berliner Bildungsprogramm (BBP): Straßenbäume adoptieren und gießen, Vögel und Insekten bestimmen und Wissen zwischen den Generationen teilen.",
     what_card2_tag: "Jugend, Erwachsene & Kiez",
     what_card2_title: "Citizen Science im Kiez & Hinterhof",
     what_card2_text:
@@ -232,28 +232,28 @@ const translations = {
     comm_title: "Alle im Kiez können mitwirken",
     comm_intro:
       "Straßenbäume und begrünte Hinterhöfe brauchen den ganzen Sommer über Pflege – besonders in den Schulferien, wenn die Hitze am größten ist. Blad verbindet fünf Gruppen zu einem kontinuierlichen Kiez-Netzwerk:",
-    comm_group_1: "🌱 Kitas & Schulen",
+    comm_group_1: "🌱 Kitas, Familienzentren & Schulen",
     comm_group_2: "🌿 Nachbarschaft & Familien",
     comm_group_3: "🌳 Senior*innen",
     comm_group_4: "🏡 Hinterhof- & Baum-Initiativen",
     comm_group_5: "🏢 Unternehmensteams",
     comm_card_title: "Werde Teil der Blad Community",
     comm_card_text:
-      "Möchtest du dich um einen Straßenbaum kümmern, einen Hinterhof begrünen oder einen Workshop in deine Kita, Schule oder Seniorengruppe holen?",
+      "Möchtest du dich um einen Straßenbaum kümmern, einen Hinterhof begrünen oder einen kostenfreien Workshop in deine Kita, dein Familienzentrum, deine Schule oder Seniorengruppe holen?",
     comm_card_btn: "Per E-Mail mitmachen",
     comm_card_sublink: "Oder nutze das Kontaktformular unten →",
 
     how_label: "03 · Social-Business- & Wirkungsmodell",
     how_title: "Wie unser hybrides Modell im Quartier funktioniert",
-    how_step1_title: "Kostenfreier Zugang für Kitas, Schulen & Community",
+    how_step1_title: "Kostenfreier Zugang für Kitas, Familienzentren & Schulen",
     how_step1_text:
-      "Unsere Bildungsworkshops und Kiez-Aktionen sind für teilnehmende Kitas, Schulen, Seniorengruppen und Anwohnende kostenfrei, damit jedes Quartier unabhängig vom Budget teilnehmen kann.",
+      "Unsere Bildungsworkshops und Kiez-Aktionen sind für teilnehmende Kitas, Familienzentren, Schulen, Seniorengruppen und Anwohnende kostenfrei, damit jedes Quartier unabhängig vom Budget teilnehmen kann.",
     how_step2_title: "Hybrides Modell: Unternehmenstage & geplante Förderung",
     how_step2_text:
-      "Unser Social-Business-Modell kombiniert Einnahmen aus bezahlten Kiez Impact Days für Unternehmen mit geplanten Anträgen auf öffentliche Klima-, Bildungs- und Quartiersförderung.",
+      "Unser Social-Business-Modell kombiniert Einnahmen aus bezahlten Kiez Impact Days für Unternehmen mit geplanten Anträgen auf öffentliche Klima-, Bezirksamts-, Bildungs- und Quartiersförderung.",
     how_step3_title: "Gemeinsam mit lokalen Kiez-Partnern",
     how_step3_text:
-      "Jeder Workshop, jede Baumscheiben-Bepflanzung und jede Hinterhofbegrünung wird eng mit Nachbarschaftshäusern, pädagogischen Fachkräften, Gieß-Initiativen und Grünflächen-Partnern umgesetzt.",
+      "Jeder Workshop, jede Baumscheiben-Bepflanzung und jede Hinterhofbegrünung wird eng mit Familienzentren, Stadtteilzentren, pädagogischen Fachkräften, Gieß-Initiativen und Grünflächen-Partnern umgesetzt.",
 
     pilot_label: "04 · Pilot- & Inkubations-Fahrplan (2026/27)",
     pilot_title: "Von der Validierung zur messbaren Wirkung im Kiez",
@@ -263,9 +263,9 @@ const translations = {
     stage_2_label: "Schritt 2",
     stage_3_label: "Schritt 3",
     status_planned: "Geplant",
-    pilot_stage1_title: "Gespräche mit Nachbarschaft, Kitas, Schulen & Partnern",
+    pilot_stage1_title: "Gespräche mit Kitas, Familienzentren, Schulen & Partnern",
     pilot_stage1_text:
-      "Strukturierte Bedarfsanalyse mit pädagogischen Teams, Nachbarschaftszentren, Seniorengruppen, Baum-Initiativen und CSR-Teams in Berlin und Brandenburg zur gemeinsamen Formatentwicklung.",
+      "Strukturierte Bedarfsanalyse mit Kitas, Familienzentren, Stadtteilzentren, Seniorengruppen, Baum-Initiativen und CSR-Teams in Berlin und Brandenburg zur gemeinsamen Formatentwicklung.",
     pilot_stage2_title: "Erste Pilot-Workshops durchführen",
     pilot_stage2_text:
       "Durchführung erster Praxiseinheiten zu Artenbestimmung, Straßenbaumpflege, Hinterhofkühlung und Mikroklima-Messung sowie Auswertung der sozialen und ökologischen Wirkung.",
@@ -284,7 +284,7 @@ const translations = {
     contact_label: "06 · Mitmachen & Kontakt",
     contact_title: "Werde Teil der Blad Community oder Partner",
     contact_lead:
-      "Ob du als Nachbar*in, Lehrkraft oder Seniorengruppe Straßenbäume und Hinterhöfe pflegen möchtest, als Unternehmen einen Kiez Impact Day planst oder als Inkubator bzw. Förderprogramm in Berlin & Brandenburg auf uns schaust – wir freuen uns auf deine Nachricht.",
+      "Ob du als Nachbar*in, Kita-/Familienzentrum-Team oder Seniorengruppe Straßenbäume und Hinterhöfe pflegen möchtest, als Unternehmen einen Kiez Impact Day planst oder als Inkubator bzw. Förderprogramm in Berlin & Brandenburg auf uns schaust – wir freuen uns auf deine Nachricht.",
     contact_direct_label: "Direkte E-Mail (Platzhalter):",
 
     form_name_label: "Dein Name",
@@ -292,7 +292,7 @@ const translations = {
     form_role_label: "Ich melde mich als",
     form_role_opt_comm:
       "Community-Mitglied (Nachbarschaft, Erwachsene, Familie, Senior*in)",
-    form_role_opt1: "Kita- oder Schulteam",
+    form_role_opt1: "Kita-, Familienzentrum- oder Schulteam",
     form_role_opt2: "Unternehmen (Kiez Impact Day / CSR / HR)",
     form_role_opt3: "Inkubator, Förderprogramm, Jury oder lokaler Partner",
     form_role_opt4: "Sonstige Anfrage",
