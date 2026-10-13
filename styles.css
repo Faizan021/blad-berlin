@@ -655,6 +655,60 @@ h1, h2, h3 {
 }
 
 /* ==========================================================================
+   High-Trust Ecosystem & Community Network Strip (Curani-Style Anchor)
+   ========================================================================== */
+.trust-network-strip {
+  background-color: #EDF6F0;
+  border-bottom: 1px solid var(--border);
+  padding: 0.95rem 0;
+  font-size: 0.85rem;
+}
+
+.trust-network-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.trust-network-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--green-primary);
+}
+
+.trust-network-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 6px rgba(15, 38, 26, 0.04);
+}
+
+.trust-chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--green-bright);
+}
+
+/* ==========================================================================
    The Problem Section & Leaf Spectrum Showcase
    ========================================================================== */
 .problem-split-layout {
@@ -867,7 +921,10 @@ h1, h2, h3 {
 }
 
 .card-content {
-  padding: 1.75rem 2rem 2rem;
+  padding: 1.65rem 1.75rem 1.85rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .audience-tag {
@@ -885,12 +942,93 @@ h1, h2, h3 {
 }
 
 .card-title {
-  font-size: 1.45rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+  margin-bottom: 0.65rem;
+  line-height: 1.25;
 }
 
 .card-body {
   color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+/* Curani-Style Structured Key Detail Specs */
+.card-spec-box {
+  margin-top: auto;
+  background-color: var(--surface-tint);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.15rem;
+}
+
+.card-spec-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: 0.84rem;
+}
+
+.card-spec-label {
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+}
+
+.card-spec-val {
+  font-size: 0.86rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.card-spec-val.text-green {
+  color: var(--green-primary);
+  font-weight: 700;
+}
+
+.card-spec-val.text-accent {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.btn-card {
+  display: block;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.7rem 1.15rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--green-primary);
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.16);
+}
+
+.btn-card:hover {
+  background-color: var(--green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(27, 67, 50, 0.24);
+}
+
+.btn-card-accent {
+  background-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(192, 86, 49, 0.22);
+}
+
+.btn-card-accent:hover {
+  background-color: #a84422;
+  box-shadow: 0 6px 18px rgba(192, 86, 49, 0.32);
 }
 
 /* ==========================================================================

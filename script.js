@@ -63,6 +63,19 @@ const translations = {
     what_card3_text:
       "Paid corporate team days where Berlin and Brandenburg companies green shared inner courtyards (Hinterhöfe), plant street tree beds (Baumscheiben), and build insect hotels—working side by side with local partners and co-financing free community workshops.",
 
+    trust_label: "Pilot 2026/27 Ecosystem & Community Network:",
+    card_spec_cost_label: "Kosten / Access:",
+    card_spec_format_label: "Format:",
+    card1_cost_val: "100% Free for Kitas & Seniors",
+    card1_format_val: "3–4 hrs guided outdoor session · Berlin & Potsdam",
+    card1_btn: "Inquire for your Kita or Group →",
+    card2_cost_val: "100% Free Community Participation",
+    card2_format_val: "2–3 hrs microclimate walk & sensor exploration",
+    card2_btn: "Join Next Kiez Session →",
+    card3_cost_val: "From €1,800 / Team (Co-Finances Free Workshops)",
+    card3_format_val: "Turnkey 3.5 hrs ESG team day + verified CSR report",
+    card3_btn: "Book a Corporate Impact Day →",
+
     comm_label: "Blad Community · Moving From Climate Worry to Action",
     comm_title: "Everyone in the Kiez has a role",
     comm_intro:
@@ -198,6 +211,19 @@ const translations = {
     what_card3_title: "Kiez Impact Days für Unternehmen",
     what_card3_text:
       "Bezahlte Einsatz- und Teamtage, bei denen Unternehmen aus Berlin und Brandenburg gemeinsam mit lokalen Partnern Hinterhöfe begrünen, Baumscheiben bepflanzen und Insektenhotels bauen – und so kostenfreie Kiez-Workshops mitermöglichen.",
+
+    trust_label: "Pilot 2026/27 Ökosystem- & Kiez-Netzwerk:",
+    card_spec_cost_label: "Kosten / Zugang:",
+    card_spec_format_label: "Format:",
+    card1_cost_val: "100% kostenfrei für Kitas & Senior*innen",
+    card1_format_val: "3–4 Std. Praxis-Session · Berlin & Potsdam",
+    card1_btn: "Für Kita oder Gruppe anfragen →",
+    card2_cost_val: "100% kostenfreie Kiez-Teilnahme",
+    card2_format_val: "2–3 Std. Mikroklima- & Sensor-Rundgang",
+    card2_btn: "Beim nächsten Rundgang mitmachen →",
+    card3_cost_val: "Ab 1.800 € / Team (ermöglicht freie Workshops)",
+    card3_format_val: "Rundum begleiteter 3,5-Std. ESG-Teamtag + CSR-Zertifikat",
+    card3_btn: "Kiez Impact Day für Unternehmen anfragen →",
 
     comm_label: "Blad Community · Vom Klimastress ins Handeln",
     comm_title: "Alle im Kiez können mitwirken",
