@@ -53,7 +53,7 @@ const translations = {
     what_card1_tag: "Kitas, Familienzentren & Seniors",
     what_card1_title: "Intergenerational nature & tree-care workshops",
     what_card1_text:
-      "Hands-on discovery for Kita groups, Familienzentren (family centres), schools, and older neighbours—aligned with the Berliner Bildungsprogramm (BBP): adopting and watering local street trees, spotting birds and insects, and sharing knowledge across generations.",
+      "Hands-on discovery for Kita groups, family centres, schools, and older neighbours: adopting and watering local street trees, spotting birds and insects, and sharing knowledge across generations.",
     what_card2_tag: "Youth, Adults & Neighbours",
     what_card2_title: "Kiez & courtyard citizen science",
     what_card2_text:
@@ -63,7 +63,6 @@ const translations = {
     what_card3_text:
       "Paid corporate team days where Berlin and Brandenburg companies green shared inner courtyards (Hinterhöfe), plant street tree beds (Baumscheiben), and build insect hotels—working side by side with local partners and co-financing free community workshops.",
 
-    trust_label: "Pilot 2026/27 Ecosystem & Community Network:",
     card_spec_cost_label: "Kosten / Access:",
     card_spec_format_label: "Format:",
     card1_cost_val: "100% Free for Kitas & Seniors",
@@ -202,7 +201,7 @@ const translations = {
     what_card1_tag: "Kitas, Familienzentren & Senior*innen",
     what_card1_title: "Generationsübergreifende Natur- & Baum-Workshops",
     what_card1_text:
-      "Praxisnahes Entdecken für Kita-Gruppen, Familienzentren, Schulklassen und ältere Nachbar*innen – orientiert am Berliner Bildungsprogramm (BBP): Straßenbäume adoptieren und gießen, Vögel und Insekten bestimmen und Wissen zwischen den Generationen teilen.",
+      "Praxisnahes Entdecken für Kita-Gruppen, Familienzentren, Schulklassen und ältere Nachbar*innen: Straßenbäume adoptieren und gießen, Vögel und Insekten bestimmen und Wissen zwischen den Generationen teilen.",
     what_card2_tag: "Jugend, Erwachsene & Kiez",
     what_card2_title: "Citizen Science im Kiez & Hinterhof",
     what_card2_text:
@@ -212,7 +211,6 @@ const translations = {
     what_card3_text:
       "Bezahlte Einsatz- und Teamtage, bei denen Unternehmen aus Berlin und Brandenburg gemeinsam mit lokalen Partnern Hinterhöfe begrünen, Baumscheiben bepflanzen und Insektenhotels bauen – und so kostenfreie Kiez-Workshops mitermöglichen.",
 
-    trust_label: "Pilot 2026/27 Ökosystem- & Kiez-Netzwerk:",
     card_spec_cost_label: "Kosten / Zugang:",
     card_spec_format_label: "Format:",
     card1_cost_val: "100% kostenfrei für Kitas & Senior*innen",
