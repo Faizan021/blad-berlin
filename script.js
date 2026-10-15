@@ -1,5 +1,5 @@
 /**
- * Blad — Berlin & Brandenburg Community Nature Education & Climate Action (Pilot 2026/27)
+ * Blatt — Berlin & Brandenburg Community Nature Education & Climate Action (Pilot 2026/27)
  * Vanilla JS: EN/DE language toggle, mobile nav, mailto form builder, scroll reveal.
  * No cookies, trackers, or external libraries.
  */
@@ -22,7 +22,7 @@ const translations = {
       "Hands-on nature education & local climate action for Berlin's communities",
     hero_subline:
       "Helping neighbourhoods move from climate worry to collective action—bringing Kitas, schools, adults, seniors, and companies together to care for street trees, green inner courtyards (Hinterhöfe), spot birds and insects, and measure urban heat.",
-    hero_cta_partner: "Join the Blad Community",
+    hero_cta_partner: "Join the Blatt Community",
     hero_cta_book: "Book a Kiez Impact Day",
     hero_note:
       "For neighbours of all ages, Kitas & schools, CSR/HR teams, and impact incubation & grant partners.",
@@ -90,16 +90,16 @@ const translations = {
     season4_title: "Winter Ecology & Birds",
     season4_desc: "Building bird feeding stations and winter insect shelters in indoor/outdoor workshops for community & corporate CSR.",
 
-    comm_label: "Blad Community · Moving From Climate Worry to Action",
+    comm_label: "Blatt Community · Moving From Climate Worry to Action",
     comm_title: "Everyone in the Kiez has a role",
     comm_intro:
-      "Street trees and green courtyards need care all summer long—especially during school holidays when droughts peak. Blad connects five neighbourhood groups into one continuous care network:",
+      "Street trees and green courtyards need care all summer long—especially during school holidays when droughts peak. Blatt connects five neighbourhood groups into one continuous care network:",
     comm_group_1: "🌱 Kitas, Familienzentren & Schools",
     comm_group_2: "🌿 Neighbours & Families",
     comm_group_3: "🌳 Seniors & Retirees",
     comm_group_4: "🏡 Courtyard & Tree Initiatives",
     comm_group_5: "🏢 Company Teams",
-    comm_card_title: "Join the Blad Community",
+    comm_card_title: "Join the Blatt Community",
     comm_card_text:
       "Want to adopt a street tree on your block, green an inner courtyard (Hinterhof), or bring a free workshop to your Kita, Familienzentrum, school, or senior group?",
     comm_card_btn: "Join via Email",
@@ -120,7 +120,7 @@ const translations = {
     pilot_label: "04 · Pilot & Incubation Roadmap (2026/27)",
     pilot_title: "From concept validation to measurable neighbourhood impact",
     pilot_intro:
-      "Blad is in the early pilot phase for 2026/27 in Berlin and Brandenburg. Here are the three validation steps we are preparing:",
+      "Blatt is in the early pilot phase for 2026/27 in Berlin and Brandenburg. Here are the three validation steps we are preparing:",
     stage_1_label: "Stage 1",
     stage_2_label: "Stage 2",
     stage_3_label: "Stage 3",
@@ -136,15 +136,15 @@ const translations = {
       "Apply for public climate-adaptation, neighbourhood, and startup support programmes alongside initial corporate Kiez Impact Days to validate our sustainable hybrid financing model.",
 
     about_label: "05 · About & Founding Mission",
-    about_title: "Why we are building Blad",
+    about_title: "Why we are building Blatt",
     about_photo_placeholder: "Faizan Ahmed & Maham Shakil · Berlin & Brandenburg",
     about_placeholder_badge: "Founding Team · Berlin",
-    about_name: "Faizan Ahmed & Maham Shakil · Co-Founders, Blad",
+    about_name: "Faizan Ahmed & Maham Shakil · Co-Founders, Blatt",
     about_bio:
-      "As Berliners with a shared vision to help green Germany—starting right in our own neighbourhoods—we founded Blad to bring people of all generations together for practical urban climate action. In our 2026/27 pilot phase across Berlin and Brandenburg, we are turning stressed street trees and hot inner courtyards into living classrooms and cooler, greener shared spaces.",
+      "As Berliners with a shared vision to help green Germany—starting right in our own neighbourhoods—we founded Blatt to bring people of all generations together for practical urban climate action. In our 2026/27 pilot phase across Berlin and Brandenburg, we are turning stressed street trees and hot inner courtyards into living classrooms and cooler, greener shared spaces.",
 
     contact_label: "06 · Join & Contact",
-    contact_title: "Join the Blad Community or partner with us",
+    contact_title: "Join the Blatt Community or partner with us",
     contact_lead:
       "Whether you are a neighbour, Kita/Familienzentrum educator, or senior group wanting to care for street trees and courtyards, a company planning a Kiez Impact Day, or an incubator / grant reviewer in Berlin & Brandenburg—we would love to hear from you.",
     contact_direct_label: "Direct email:",
@@ -176,7 +176,7 @@ const translations = {
     nav_community: "Community",
     nav_how: "So funktioniert's",
     nav_pilot: "Pilotphase",
-    nav_about: "Über Blad",
+    nav_about: "Über Blatt",
     nav_contact: "Mitmachen / Kontakt",
 
     hero_eyebrow:
@@ -185,7 +185,7 @@ const translations = {
       "Praktische Naturbildung & lokaler Klimaschutz für Berliner Kieze",
     hero_subline:
       "Wir unterstützen Nachbarschaften dabei, vom Klimastress ins gemeinsame Handeln zu kommen: Kitas, Familienzentren, Schulen, Erwachsene, Senior*innen und Unternehmen pflegen gemeinsam Straßenbäume, begrünen Hinterhöfe, entdecken Vögel und Insekten und messen Stadthitze.",
-    hero_cta_partner: "Teil der Blad Community werden",
+    hero_cta_partner: "Teil der Blatt Community werden",
     hero_cta_book: "Kiez Impact Day anfragen",
     hero_note:
       "Für Nachbar*innen jeden Alters, Kitas, Familienzentren & Schulen, CSR-/HR-Teams sowie Inkubatoren und Förderpartner.",
@@ -253,16 +253,16 @@ const translations = {
     season4_title: "Winter-Ökologie & Vögel",
     season4_desc: "Vogelfutterstationen und Überwinterungsquartiere bauen – interaktive Indoor/Outdoor CSR-Tage.",
 
-    comm_label: "Blad Community · Vom Klimastress ins Handeln",
+    comm_label: "Blatt Community · Vom Klimastress ins Handeln",
     comm_title: "Alle im Kiez können mitwirken",
     comm_intro:
-      "Straßenbäume und begrünte Hinterhöfe brauchen den ganzen Sommer über Pflege – besonders in den Schulferien, wenn die Hitze am größten ist. Blad verbindet fünf Gruppen zu einem kontinuierlichen Kiez-Netzwerk:",
+      "Straßenbäume und begrünte Hinterhöfe brauchen den ganzen Sommer über Pflege – besonders in den Schulferien, wenn die Hitze am größten ist. Blatt verbindet fünf Gruppen zu einem kontinuierlichen Kiez-Netzwerk:",
     comm_group_1: "🌱 Kitas, Familienzentren & Schulen",
     comm_group_2: "🌿 Nachbarschaft & Familien",
     comm_group_3: "🌳 Senior*innen",
     comm_group_4: "🏡 Hinterhof- & Baum-Initiativen",
     comm_group_5: "🏢 Unternehmensteams",
-    comm_card_title: "Werde Teil der Blad Community",
+    comm_card_title: "Werde Teil der Blatt Community",
     comm_card_text:
       "Möchtest du dich um einen Straßenbaum kümmern, einen Hinterhof begrünen oder einen kostenfreien Workshop in deine Kita, dein Familienzentrum, deine Schule oder Seniorengruppe holen?",
     comm_card_btn: "Per E-Mail mitmachen",
@@ -283,7 +283,7 @@ const translations = {
     pilot_label: "04 · Pilot- & Inkubations-Fahrplan (2026/27)",
     pilot_title: "Von der Validierung zur messbaren Wirkung im Kiez",
     pilot_intro:
-      "Blad befindet sich in der frühen Pilotphase 2026/27 in Berlin und Brandenburg. Diese drei Validierungsschritte bereiten wir aktuell vor:",
+      "Blatt befindet sich in der frühen Pilotphase 2026/27 in Berlin und Brandenburg. Diese drei Validierungsschritte bereiten wir aktuell vor:",
     stage_1_label: "Schritt 1",
     stage_2_label: "Schritt 2",
     stage_3_label: "Schritt 3",
@@ -298,16 +298,16 @@ const translations = {
     pilot_stage3_text:
       "Bewerbung um öffentliche Klimaanpassungs-, Quartiers- und Gründungsförderung begleitend zu ersten Kiez Impact Days mit Unternehmen zur Validierung unseres hybriden Finanzierungsmodells.",
 
-    about_label: "05 · Über Blad & Gründungsmission",
-    about_title: "Warum wir Blad aufbauen",
+    about_label: "05 · Über Blatt & Gründungsmission",
+    about_title: "Warum wir Blatt aufbauen",
     about_photo_placeholder: "Faizan Ahmed & Maham Shakil · Berlin & Brandenburg",
     about_placeholder_badge: "Gründerteam · Berlin",
-    about_name: "Faizan Ahmed & Maham Shakil · Co-Founders, Blad",
+    about_name: "Faizan Ahmed & Maham Shakil · Co-Founders, Blatt",
     about_bio:
-      "Als Berliner*innen mit der gemeinsamen Vision, Deutschland Schritt für Schritt grüner zu machen – direkt vor unserer eigenen Haustür –, haben wir Blad ins Leben gerufen, um Menschen aller Generationen für praktischen Klimaschutz im Kiez zusammenzubringen. In unserer Pilotphase 2026/27 in Berlin und Brandenburg verwandeln wir belastete Straßenbäume und aufgeheizte Hinterhöfe in lebendige Lernorte und kühlere, grünere Nachbarschaften.",
+      "Als Berliner*innen mit der gemeinsamen Vision, Deutschland Schritt für Schritt grüner zu machen – direkt vor unserer eigenen Haustür –, haben wir Blatt ins Leben gerufen, um Menschen aller Generationen für praktischen Klimaschutz im Kiez zusammenzubringen. In unserer Pilotphase 2026/27 in Berlin und Brandenburg verwandeln wir belastete Straßenbäume und aufgeheizte Hinterhöfe in lebendige Lernorte und kühlere, grünere Nachbarschaften.",
 
     contact_label: "06 · Mitmachen & Kontakt",
-    contact_title: "Werde Teil der Blad Community oder Partner",
+    contact_title: "Werde Teil der Blatt Community oder Partner",
     contact_lead:
       "Ob du als Nachbar*in, Kita-/Familienzentrum-Team oder Seniorengruppe Straßenbäume und Hinterhöfe pflegen möchtest, als Unternehmen einen Kiez Impact Day planst oder als Inkubator bzw. Förderprogramm in Berlin & Brandenburg auf uns schaust – wir freuen uns auf deine Nachricht.",
     contact_direct_label: "Direkte E-Mail:",
@@ -726,7 +726,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const message = msgEl ? msgEl.value.trim() : "";
 
       const subject = encodeURIComponent(
-        `Blad Community / Inquiry (${role}) — ${name}`
+        `Blatt Community / Inquiry (${role}) — ${name}`
       );
       const body = encodeURIComponent(
         `Name: ${name}\nRole: ${role}\n\n${message}`
