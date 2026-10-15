@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blatt · Master Impact Pitch · Impact Labs 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --forest-dark: #071A10;
+      --forest-deep: #0B2416;
+      --forest-card: #123321;
+      --green-accent: #52B788;
+      --green-bright: #74C69D;
+      --green-mint: #D8F3DC;
+      --terracotta: #D96B43;
+      --terracotta-bg: #2A1711;
+      --terracotta-border: #8A3E16;
+      --white: #FFFFFF;
+      --text-muted: #A3C9B3;
+      --border-light: rgba(116, 198, 157, 0.22);
+      --font-serif: 'Fraunces', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: var(--forest-dark);
+      font-family: var(--font-sans);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient background glow */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -20%;
+      left: 10%;
+      width: 60vw;
+      height: 60vh;
+      background: radial-gradient(circle, rgba(82, 183, 136, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Top Floating Bar */
+    .top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 50;
+      background: rgba(7, 26, 16, 0.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-logo {
+      font-size: 1.35rem;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--white);
+    }
+
+    .brand-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(82, 183, 136, 0.18);
+      color: var(--green-mint);
+      border: 1px solid rgba(82, 183, 136, 0.35);
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .slide-counter {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--green-mint);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-light);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+    }
+
+    .btn {
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      border: 1px solid transparent;
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--white);
+      border-color: var(--border-light);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--green-bright);
+    }
+
+    .btn-primary {
+      background: var(--green-accent);
+      color: #05140C;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-bright);
+      transform: translateY(-1px);
+    }
+
+    /* Presentation Canvas (Strict 16:9 responsive viewport) */
+    .viewport {
+      position: absolute;
+      top: 64px;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .slide-stage {
+      width: 100%;
+      max-width: 1360px;
+      height: 100%;
+      max-height: 765px;
+      aspect-ratio: 16 / 9;
+      position: relative;
+    }
+
+    /* Individual Slide */
+    .slide {
+      position: absolute;
+      inset: 0;
+      background: var(--forest-deep);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      padding: 2.2rem 2.8rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0.98) translateY(8px);
+      transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(8px);
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1) translateY(0);
+      z-index: 10;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .slide-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--green-bright);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .slide-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--white);
+      max-width: 950px;
+    }
+
+    .slide-num-pill {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green-bright);
+      background: rgba(82, 183, 136, 0.12);
+      border: 1px solid rgba(82, 183, 136, 0.3);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* Slide Body Layouts */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      height: 100%;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.15rem;
+      height: 100%;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--forest-card);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 1.35rem 1.45rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-warm {
+      border-left: 5px solid var(--terracotta);
+      background: linear-gradient(180deg, rgba(42, 23, 17, 0.6) 0%, var(--forest-card) 100%);
+    }
+
+    .card-accent {
+      border-left: 5px solid var(--green-accent);
+      background: linear-gradient(180deg, rgba(18, 51, 33, 0.85) 0%, var(--forest-card) 100%);
+    }
+
+    .card-tag {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.65rem;
+    }
+
+    .tag-warm {
+      background: rgba(217, 107, 67, 0.2);
+      color: #FFA27E;
+      border: 1px solid rgba(217, 107, 67, 0.4);
+    }
+
+    .tag-green {
+      background: rgba(82, 183, 136, 0.2);
+      color: var(--green-mint);
+      border: 1px solid rgba(82, 183, 136, 0.4);
+    }
+
+    .card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.28rem;
+      line-height: 1.25;
+      color: var(--white);
+      margin-bottom: 0.65rem;
+    }
+
+    .card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: #E2F0E7;
+    }
+
+    .card li strong {
+      color: var(--white);
+    }
+
+    .card-ref {
+      display: block;
+      font-size: 0.74rem;
+      color: var(--green-bright);
+      margin-top: 0.2rem;
+      font-style: italic;
+    }
+
+    .card-warm .card-ref {
+      color: #FFA27E;
+    }
+
+    /* Bottom Visual Metric Strips (No Empty Space) */
+    .metric-strip {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: rgba(7, 26, 16, 0.55);
+      border: 1px solid var(--border-light);
+    }
+
+    .stat-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .stat-number.green { color: var(--green-bright); }
+    .stat-number.warm { color: #FFA27E; }
+
+    .stat-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .stat-sep {
+      width: 1px;
+      height: 28px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Season Cards */
+    .season-card {
+      background: var(--forest-card);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 1.25rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .season-top {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .season-time {
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .season-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .season-card p {
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: #E2F0E7;
+    }
+
+    .season-badge {
+      margin-top: 1rem;
+      padding: 0.45rem 0.65rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Slide Footer */
+    .slide-footer {
+      border-top: 1px solid var(--border-light);
+      padding-top: 0.75rem;
+      margin-top: 1.15rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Bottom Controller Dock */
+    .bottom-dock {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: rgba(7, 26, 16, 0.85);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-light);
+      z-index: 50;
+    }
+
+    .progress-bar-container {
+      flex: 1;
+      max-width: 500px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 0 1.5rem;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 20%;
+      background: var(--green-accent);
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    .nav-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-light);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      background: var(--green-accent);
+      color: #05140C;
+      border-color: var(--green-accent);
+      transform: scale(1.05);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .dock-hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .kbd {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 0.15rem 0.45rem;
+      font-size: 0.72rem;
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-bar">
+    <div class="brand">
+      <span class="brand-logo">🌿</span>
+      <span class="brand-name">Blatt</span>
+      <span class="brand-tag">Impact Labs 2026</span>
+    </div>
+
+    <div class="controls">
+      <span class="slide-counter" id="slideIndicator">01 / 05</span>
+      <button class="btn btn-outline" id="fullscreenBtn" title="Toggle Fullscreen (F)">⛶ Fullscreen</button>
+      <a href="https://faizan021.github.io/blad-berlin/" target="_blank" class="btn btn-primary">Live Prototype ↗</a>
+    </div>
+  </header>
+
+  <!-- Viewport Stage -->
+  <main class="viewport">
+    <div class="slide-stage">
+
+      <!-- SLIDE 1: MISSION & THE PROBLEM -->
+      <section class="slide active" id="slide-1">
+        <header class="slide-header">
+          <div>
+            <span class="slide-eyebrow">01 · Mission &amp; The Problem</span>
+            <h2 class="slide-title">400,000+ street trees face heat stress—while kids lack nature education and companies seek local CSR</h2>
+          </div>
+          <span class="slide-num-pill">01 / 05</span>
+        </header>
+
+        <div class="slide-body">
+          <div class="grid-2">
+            <!-- Problem Card -->
+            <div class="card card-warm">
+              <div>
+                <span class="card-tag tag-warm">The Urban Climate Crisis</span>
+                <h3>400,000+ Street Trees &amp; Concrete Schoolyards</h3>
+                <ul>
+                  <li>
+                    <strong>430,000+ street trees facing drought:</strong> Berlin's street trees suffer severe crown thinning and water stress during recurring heatwaves.
+                    <span class="card-ref">[Source: Berlin Senate Tree Register &amp; Baumzustandsbericht]</span>
+                  </li>
+                  <li>
+                    <strong>Kids &amp; seniors most vulnerable:</strong> Dense asphalt courtyards heat up by +10°C, while public schools and Kitas lack budget for outdoor nature programs.
+                    <span class="card-ref">[Source: Robert Koch Institute (RKI) &amp; Berlin Climate Plan AFOK]</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="metric-strip">
+                <div class="stat-box">
+                  <span class="stat-number warm">430,000+</span>
+                  <span class="stat-label">Street Trees</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-box">
+                  <span class="stat-number warm">+10°C</span>
+                  <span class="stat-label">Asphalt Heat</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-box">
+                  <span class="stat-number warm">2,800</span>
+                  <span class="stat-label">Kitas in Berlin</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vision Card -->
+            <div class="card card-accent">
+              <div>
+                <span class="card-tag tag-green">Our Vision &amp; Opportunity</span>
+                <h3>Blatt: Hands-On Climate Action, Kiez by Kiez</h3>
+                <ul>
+                  <li>
+                    <strong>Our Mission:</strong> We empower communities and companies through guided, experiential outdoor nature workshops across all four seasons.
+                  </li>
+                  <li>
+                    <strong>Untapped Corporate Demand:</strong> Companies actively search for meaningful, local CSR team-building days to engage employees and fulfill new ESG/CSRD sustainability criteria.
+                    <span class="card-ref">[Source: EU Corporate Sustainability Reporting Directive (CSRD)]</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="metric-strip">
+                <div class="stat-box">
+                  <span class="stat-number green">1-for-1</span>
+                  <span class="stat-label">Cross-Financing</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-box">
+                  <span class="stat-number green">4 Seasons</span>
+                  <span class="stat-label">All-Year Learning</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-box">
+                  <span class="stat-number green">EU CSRD</span>
+                  <span class="stat-label">Reporting Ready</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <span>Blatt · Pre-Seed Social Enterprise · Selection Day Impact Labs (Universität Potsdam)</span>
+          <span>Faizan Ahmed &amp; Maham Shakil</span>
+        </footer>
+      </section>
+
+      <!-- SLIDE 2: THE 4-SEASON CURRICULUM -->
+      <section class="slide" id="slide-2">
+        <header class="slide-header">
+          <div>
+            <span class="slide-eyebrow">02 · The Solution</span>
+            <h2 class="slide-title">Action-oriented environmental education across all 4 seasons</h2>
+          </div>
+          <span class="slide-num-pill">02 / 05</span>
+        </header>
+
+        <div class="slide-body">
+          <p style="font-size: 0.95rem; color: var(--green-mint); margin-bottom: 0.85rem; font-weight: 600;">
+            Blatt is an interactive workshop platform: We combine ecological science with learning by doing (Mitmach-Workshops):
+          </p>
+
+          <div class="grid-4">
+            <!-- Spring -->
+            <div class="season-card" style="border-top: 4px solid #52B788;">
+              <div class="season-top">
+                <span class="season-time" style="color: #52B788;">🌸 Spring (Mar–May)</span>
+                <h3>Wild Bees &amp; Pollinators</h3>
+                <p>Assembling safe, non-stinging solitary wild-bee nesting kits (Insektenhotels) and sowing native wildflower seeds.</p>
+              </div>
+              <div class="season-badge" style="background: rgba(82, 183, 136, 0.15); color: #74C69D; border: 1px solid rgba(82,183,136,0.3);">
+                🐝 100% Stingless Solitary Bees
+              </div>
+            </div>
+
+            <!-- Summer -->
+            <div class="season-card" style="border-top: 4px solid #D87D4A;">
+              <div class="season-top">
+                <span class="season-time" style="color: #FFA27E;">☀️ Summer (Jun–Aug)</span>
+                <h3>Heat Defense &amp; Trees</h3>
+                <p>Citizen science: measuring 15°C+ live cooling with infrared sensor thermometers, mapping pumps, and deep-root watering.</p>
+              </div>
+              <div class="season-badge" style="background: rgba(216, 125, 74, 0.15); color: #FFA27E; border: 1px solid rgba(216,125,74,0.3);">
+                🌡️ -15°C Live Cooling Metric
+              </div>
+            </div>
+
+            <!-- Autumn -->
+            <div class="season-card" style="border-top: 4px solid #B5838D;">
+              <div class="season-top">
+                <span class="season-time" style="color: #EBB6C0;">🍂 Autumn (Sep–Nov)</span>
+                <h3>Soil Health &amp; Mulching</h3>
+                <p>Aerating compacted urban soil, spreading biological woodchip mulch to insulate tree roots, and planting early bulbs.</p>
+              </div>
+              <div class="season-badge" style="background: rgba(181, 131, 141, 0.15); color: #EBB6C0; border: 1px solid rgba(181,131,141,0.3);">
+                🍂 Winter Root Frost Shield
+              </div>
+            </div>
+
+            <!-- Winter -->
+            <div class="season-card" style="border-top: 4px solid #457B9D;">
+              <div class="season-top">
+                <span class="season-time" style="color: #90C5E8;">❄️ Winter (Dec–Feb)</span>
+                <h3>Winter Ecology &amp; Birds</h3>
+                <p>Building wooden bird feeding stations and winter biodiversity shelters in combined indoor-outdoor maker sessions.</p>
+              </div>
+              <div class="season-badge" style="background: rgba(69, 123, 157, 0.15); color: #90C5E8; border: 1px solid rgba(69,123,157,0.3);">
+                🔨 Indoor/Outdoor Maker Lab
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <span>Blatt · Educational Philosophy: Active Citizen Science &amp; Hands-On Nature Empowerment</span>
+          <span>Faizan Ahmed &amp; Maham Shakil</span>
+        </footer>
+      </section>
+
+      <!-- SLIDE 3: BUSINESS MODEL & IMPACT -->
+      <section class="slide" id="slide-3">
+        <header class="slide-header">
+          <div>
+            <span class="slide-eyebrow">03 · Business Model &amp; Impact</span>
+            <h2 class="slide-title">Companies pay for CSR days, funding 100% free nature education for kids</h2>
+          </div>
+          <span class="slide-num-pill">03 / 05</span>
+        </header>
+
+        <div class="slide-body">
+          <div class="grid-2">
+            <!-- Business Model -->
+            <div class="card card-accent">
+              <div>
+                <span class="card-tag tag-green">Cross-Financed Business Engine</span>
+                <h3>How Blatt Funds Free Community Education</h3>
+                <ul>
+                  <li>
+                    <strong>B2B Corporate CSR Workshops:</strong> Companies pay <strong>€1,500 to €2,800 per session</strong> (12–25 employees). Includes an expert facilitator, tools, safety gear, and an official CSR impact report.
+                  </li>
+                  <li>
+                    <strong>1-for-1 Community Cross-Financing:</strong> Every paid corporate workshop directly sponsors <strong>1 free workshop for a local public school or Kita class</strong> (20–25 kids).
+                  </li>
+                  <li>
+                    <strong>Realistic Unit Economics:</strong> Material and tool kits cost ~€250–€350 per session, leaving healthy margins to cover educators and scale.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="metric-strip">
+                <div class="stat-box">
+                  <span class="stat-number green">€1,500–€2,800</span>
+                  <span class="stat-label">Corporate Ticket</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-box">
+                  <span class="stat-number green">€0</span>
+                  <span class="stat-label">Cost for Kitas</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-box">
+                  <span class="stat-number green">100%</span>
+                  <span class="stat-label">Free for Schools</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Impact -->
+            <div class="card card-warm">
+              <div>
+                <span class="card-tag tag-warm">Net-Positive Impact · UN SDGs</span>
+                <h3>Measurable Real-World Outcomes</h3>
+                <ul>
+                  <li>
+                    <strong>Quality Education (SDG 4):</strong> Free hands-on environmental education for children regardless of school budget or family income.
+                  </li>
+                  <li>
+                    <strong>Sustainable Cities &amp; Climate (SDG 11 &amp; 13):</strong> Practical urban heat mitigation, protected street trees, and engaged local neighborhoods.
+                  </li>
+                  <li>
+                    <strong>Year 1 Pilot Goal:</strong> 10 corporate CSR days delivered, cross-financing 10 free school sessions (400+ participants trained).
+                  </li>
+                </ul>
+              </div>
+
+              <div class="metric-strip">
+                <div class="stat-box">
+                  <span class="stat-number warm">SDG 4</span>
+                  <span class="stat-label">Quality Education</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-box">
+                  <span class="stat-number warm">SDG 11</span>
+                  <span class="stat-label">Cooler Cities</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-box">
+                  <span class="stat-number warm">SDG 13</span>
+                  <span class="stat-label">Climate Action</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <span>Blatt · Self-Sustaining Hybrid Social Business Architecture</span>
+          <span>Faizan Ahmed &amp; Maham Shakil</span>
+        </footer>
+      </section>
+
+      <!-- SLIDE 4: TRACTION & PROTOTYPE -->
+      <section class="slide" id="slide-4">
+        <header class="slide-header">
+          <div>
+            <span class="slide-eyebrow">04 · Traction &amp; Working Prototype</span>
+            <h2 class="slide-title">What we already built: live bilingual platform &amp; validated concept</h2>
+          </div>
+          <span class="slide-num-pill">04 / 05</span>
+        </header>
+
+        <div class="slide-body">
+          <div class="grid-2">
+            <!-- Prototype -->
+            <div class="card card-accent">
+              <div>
+                <span class="card-tag tag-green">Live Working Product</span>
+                <h3>Interactive Platform Live at faizan021.github.io/blad-berlin/</h3>
+                <ul>
+                  <li>
+                    <strong>Interactive Heat Simulator:</strong> Live digital simulation demonstrating the 15°C cooling effect of tree-covered soil vs. bare asphalt.
+                  </li>
+                  <li>
+                    <strong>Curated Tree Care Guide:</strong> Practical care cards tailored for Berlin's primary street tree species (Linden, Maple, Oak, Chestnut).
+                  </li>
+                  <li>
+                    <strong>Full Bilingual Support (EN / DE):</strong> One-click language toggle for international and German audiences.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="metric-strip">
+                <div class="stat-box">
+                  <span class="stat-number green">LIVE</span>
+                  <span class="stat-label">Web Prototype</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-box">
+                  <span class="stat-number green">EN / DE</span>
+                  <span class="stat-label">Bilingual UI</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-box">
+                  <span class="stat-number green">4 Species</span>
+                  <span class="stat-label">Tree Guides</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Validation -->
+            <div class="card card-warm">
+              <div>
+                <span class="card-tag tag-warm">Early Grassroots Validation</span>
+                <h3>Clear Market Need &amp; Realistic Next Steps</h3>
+                <ul>
+                  <li>
+                    <strong>Direct User Feedback:</strong> Initial interviews with 12+ urban parents and volunteers showed high enthusiasm for guided family weekend nature workshops.
+                  </li>
+                  <li>
+                    <strong>Clear Differentiation:</strong> Purely digital apps only show tree maps. Blatt solves the actual execution bottleneck by providing facilitators, tools, and organized groups.
+                  </li>
+                  <li>
+                    <strong>Ready for Incubation:</strong> The curriculum and digital MVP are built; Impact Labs gives us the framework to validate B2B corporate sales.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="metric-strip">
+                <div class="stat-box">
+                  <span class="stat-number warm">12+</span>
+                  <span class="stat-label">Parents Interviewed</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-box">
+                  <span class="stat-number warm">High</span>
+                  <span class="stat-label">Family Demand</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-box">
+                  <span class="stat-number warm">Hands-On</span>
+                  <span class="stat-label">Not Just an App</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <span>Blatt · Live Working Prototype: https://faizan021.github.io/blad-berlin/</span>
+          <span>Faizan Ahmed &amp; Maham Shakil</span>
+        </footer>
+      </section>
+
+      <!-- SLIDE 5: 3-MONTH PLAN & TEAM -->
+      <section class="slide" id="slide-5">
+        <header class="slide-header">
+          <div>
+            <span class="slide-eyebrow">05 · Plan for Impact Labs &amp; Team</span>
+            <h2 class="slide-title">Our 3-month goals with Potsdam Transfer and founding team</h2>
+          </div>
+          <span class="slide-num-pill">05 / 05</span>
+        </header>
+
+        <div class="slide-body">
+          <!-- 3 Month Milestones -->
+          <div class="grid-3" style="margin-bottom: 1.15rem;">
+            <div class="card" style="border-top: 3px solid var(--green-accent);">
+              <span class="season-time" style="color: var(--green-bright);">Month 1 · Discovery</span>
+              <h3 style="font-size: 1.12rem;">15 Discovery Interviews</h3>
+              <p style="font-size: 0.85rem; color: #E2F0E7;">Structured interviews with Kita heads and corporate CSR managers across Berlin &amp; Potsdam.</p>
+            </div>
+
+            <div class="card" style="border-top: 3px solid var(--green-accent);">
+              <span class="season-time" style="color: var(--green-bright);">Month 2 · Legal Setup</span>
+              <h3 style="font-size: 1.12rem;">Non-Profit Entity (gUG)</h3>
+              <p style="font-size: 0.85rem; color: #E2F0E7;">Finalize non-profit legal structure (gUG vs. gGmbH) with Potsdam Transfer legal mentors.</p>
+            </div>
+
+            <div class="card" style="border-top: 3px solid var(--green-accent);">
+              <span class="season-time" style="color: var(--green-bright);">Month 3 · Pilots &amp; Grants</span>
+              <h3 style="font-size: 1.12rem;">3 Paid Pilots &amp; Grants</h3>
+              <p style="font-size: 0.85rem; color: #E2F0E7;">Close first 3 corporate pilot days and apply for the Brandenburg Startup Stipendium &amp; EXIST.</p>
+            </div>
+          </div>
+
+          <!-- Founding Team -->
+          <div class="grid-2">
+            <div class="card card-accent" style="padding: 1.15rem 1.35rem;">
+              <span class="card-tag tag-green">Co-Founder · Business Strategy &amp; B2B Corporate Sales</span>
+              <h3 style="font-size: 1.25rem;">Faizan Ahmed (Berlin)</h3>
+              <p style="font-size: 0.88rem; color: #E2F0E7;">Venture strategy, B2B sales outreach, financial planning, and platform development. Full-time commitment for all 12 workshop days.</p>
+            </div>
+
+            <div class="card card-accent" style="padding: 1.15rem 1.35rem;">
+              <span class="card-tag tag-green">Co-Founder · Community Operations &amp; Educational Workshops</span>
+              <h3 style="font-size: 1.25rem;">Maham Shakil (Berlin)</h3>
+              <p style="font-size: 0.88rem; color: #E2F0E7;">Community outreach, educator coordination, curriculum planning, and on-site workshop facilitation. Full-time commitment.</p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <span>Blatt · Ready to build with Impact Labs · Thank you!</span>
+          <span>Faizan Ahmed &amp; Maham Shakil</span>
+        </footer>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Bottom Dock Controller -->
+  <footer class="bottom-dock">
+    <div class="dock-hint">
+      <span>Use</span>
+      <span class="kbd">←</span>
+      <span class="kbd">→</span>
+      <span>or</span>
+      <span class="kbd">Space</span>
+      <span>to navigate</span>
+    </div>
+
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div style="display: flex; gap: 0.75rem;">
+      <button class="nav-btn" id="prevBtn" title="Previous Slide (←)">←</button>
+      <button class="nav-btn" id="nextBtn" title="Next Slide (→)">→</button>
+    </div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slideIndicator = document.getElementById('slideIndicator');
+    const progressBar = document.getElementById('progressBar');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    function updateSlide(index) {
+      if (index < 0 || index >= totalSlides) return;
+      currentSlide = index;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentSlide);
+      });
+
+      slideIndicator.textContent = `0${currentSlide + 1} / 0${totalSlides}`;
+      progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.disabled = currentSlide === totalSlides - 1;
+    }
+
+    prevBtn.addEventListener('click', () => updateSlide(currentSlide - 1));
+    nextBtn.addEventListener('click', () => updateSlide(currentSlide + 1));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        updateSlide(currentSlide + 1);
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        updateSlide(currentSlide - 1);
+      } else if (e.key.toLowerCase() === 'f') {
+        toggleFullscreen();
+      }
+    });
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+        fullscreenBtn.textContent = '✕ Exit Fullscreen';
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().catch(() => {});
+        }
+        fullscreenBtn.textContent = '⛶ Fullscreen';
+      }
+    }
+
+    fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+    updateSlide(0);
+  </script>
+</body>
+</html>
