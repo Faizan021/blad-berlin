@@ -979,6 +979,100 @@ h1, h2, h3 {
 }
 
 /* ==========================================================================
+   4-Season Year-Round Urban Ecology & CSR Calendar
+   ========================================================================== */
+.seasons-wrapper {
+  margin-top: 2.75rem;
+  background-color: #EDF6F0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.85rem 1.65rem;
+}
+
+.seasons-header {
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.seasons-header-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green-primary);
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.seasons-header-title {
+  font-size: 1.35rem;
+  color: var(--forest-dark);
+}
+
+.seasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.15rem;
+}
+
+@media (max-width: 960px) {
+  .seasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .seasons-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.season-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.05rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  box-shadow: 0 2px 8px rgba(15, 38, 26, 0.04);
+  transition: transform var(--transition-fast);
+}
+
+.season-card:hover {
+  transform: translateY(-2px);
+}
+
+.season-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+}
+
+.season-spring { background-color: rgba(82, 183, 136, 0.2); color: #1B4332; border: 1px solid rgba(82, 183, 136, 0.35); }
+.season-summer { background-color: rgba(216, 125, 74, 0.2); color: #8A3E16; border: 1px solid rgba(216, 125, 74, 0.35); }
+.season-autumn { background-color: rgba(181, 131, 141, 0.2); color: #6D3540; border: 1px solid rgba(181, 131, 141, 0.35); }
+.season-winter { background-color: rgba(69, 123, 157, 0.2); color: #1D3557; border: 1px solid rgba(69, 123, 157, 0.35); }
+
+.season-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--forest-dark);
+  margin-top: 0.25rem;
+}
+
+.season-desc {
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
    Join the Blad Community Section
    ========================================================================== */
 .community-box {
